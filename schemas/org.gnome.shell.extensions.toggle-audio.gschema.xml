@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.toggle-audio" path="/org/gnome/shell/extensions/toggle-audio/">
+    <key name="headphone" type="s">
+      <default>''</default>
+      <summary>''</summary>
+    </key>
+    <key name="speaker" type="s">
+      <default>''</default>
+      <summary>''</summary>
+    </key>
+  </schema>
+</schemalist>
