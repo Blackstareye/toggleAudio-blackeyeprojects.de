@@ -26,6 +26,7 @@ export default class ExamplePreferences extends ExtensionPreferences {
         const page = new Adw.PreferencesPage({
             title: _('Preferences'),
             icon_name: 'dialog-information-symbolic',
+            description: 'This will be refreshed'
         });
         window.add(page);
 
@@ -51,8 +52,16 @@ export default class ExamplePreferences extends ExtensionPreferences {
             model: headphoneList,
             selected: 0,
         });
+
+
+        const debugWindow = new Adw.Banner({
+            title: _('Debug-Window'),
+            revealed: true,
+        });
+
         group.add(speaker);
         group.add(headphone);
+        group.add(debugWindow);
 
         // Create a settings object and bind the speaker to the `show-indicator` key
         window._settings = this.getSettings();

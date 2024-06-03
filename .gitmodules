@@ -1,0 +1,3 @@
+[submodule "helper/audio-selector@harald65.simon.gmail.com"]
+	path = helper/audio-selector@harald65.simon.gmail.com
+	url = https://github.com/hs65/Gnome-Shell-Extension-Audio-Selector.git

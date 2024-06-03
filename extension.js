@@ -50,6 +50,8 @@ Video: https://www.youtube.com/watch?v=Y6zpDF_Ug50
 https://github.com/maoschanz/gnome-extension-development-utility
 
 https://github.com/hs65/Gnome-Shell-Extension-Audio-Selector
+
+https://gjs-docs.gnome.org/gvc10~1.0/gvc.mixercontrol
 */
 import GObject from 'gi://GObject';
 
