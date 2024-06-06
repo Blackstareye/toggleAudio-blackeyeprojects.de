@@ -58,19 +58,6 @@ const ExampleButton = GObject.registerClass(
         }
     });
 
-
-function getInformation() {
-
-
-}
-
-
-
-
-
-
-
-
 const ExampleIndicator = GObject.registerClass(
 class ExampleIndicator extends SystemIndicator {
     constructor(extensionMetadata) {
