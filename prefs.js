@@ -8,15 +8,34 @@ import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Ex
 
 export default class ExamplePreferences extends ExtensionPreferences {
 
+    _settingsInstance = null;
+    _outputDeviceMap = null;
+
+    unpackSettings() {
+        this._settingsInstance = this.getSettings();
+        // FIXME parse wirft error
+        this._outputDeviceMap = JSON.parse(this._settingsInstance.get_value("output-devices-available").recursiveUnpack());
+        
+        console.log(this._outputDeviceMap);
+    }
+
     create_ui(window) {
-        const speakerList = new Gtk.StringList();
-        const headphoneList = new Gtk.StringList();
-        speakerList.append('Automatic');
-        speakerList.append('A');
-        speakerList.append('B');
-        headphoneList.append('Automatic');
-        headphoneList.append('C');
-        headphoneList.append('D');
+        this.unpackSettings();
+        
+
+        const deviceList = new Gtk.StringList();
+
+        //TODO sync with gsetting instead append 
+
+        //  for (const k of this._outputDeviceMap) {
+        //     deviceList.append(this._outputDeviceMap[k]);
+        //  }
+        // speakerList.append('Automatic');
+        // speakerList.append('A');
+        // speakerList.append('B');
+        // headphoneList.append('Automatic');
+        // headphoneList.append('C');
+        // headphoneList.append('D');
         // for (let i = 1; i < Constants.Markets.length; i++) {
         //     const regionName = regionNameInLocale.of(Constants.Markets[i].split('-')[1]);
         //     const regionLanguage = languageInLocale.of(Constants.Markets[i].split('-')[0]);
@@ -42,7 +61,7 @@ export default class ExamplePreferences extends ExtensionPreferences {
         const speaker = new Adw.ComboRow({
             title: _('Speaker'),
             subtitle: _('Whether to show the panel indicator'),
-            model: speakerList,
+            model: deviceList,
             selected: 0,
         });
 
@@ -50,7 +69,7 @@ export default class ExamplePreferences extends ExtensionPreferences {
         const headphone = new Adw.ComboRow({
             title: _('Headphone'),
             subtitle: _('Whether to show the panel indicator'),
-            model: headphoneList,
+            model: deviceList,
             selected: 0,
         });
 

@@ -17,6 +17,12 @@
  */
 
 
+// TODO Audio devices get added again, after disabling and enabling
+
+/**
+ * Audiodevices in Preferences are only visible if 
+ */
+
 // imports
 import GObject from 'gi://GObject';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
@@ -26,7 +32,7 @@ import MixerControlFacade from './lib/MixerControl.js';
 
 
 const DEBUG=true
-const CLEAR_SCHEMA_ON_START= true;
+const CLEAR_SCHEMA_ON_START= false;
 
 /**
  * GObject Class for audio switch via toggle
@@ -111,6 +117,7 @@ export default class QuickSettingsExampleExtension extends Extension {
             console.log(`Disabling Extension`);
         }
         this._mixerControlFacade.destroy();
+        this._settingsInstance.reset("output-devices-available");
         this._settingsInstance = null;
 
         this._indicator.quickSettingsItems.forEach(item => item.destroy());
