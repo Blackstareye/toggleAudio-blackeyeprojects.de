@@ -9,5 +9,9 @@
       <default>''</default>
       <summary>''</summary>
     </key>
+    <key name="output-devices-available" type="a{is}">
+      <default>[]</default>
+      <description>A dictionary of (id; description) output devices</description>
+    </key>
   </schema>
 </schemalist>
