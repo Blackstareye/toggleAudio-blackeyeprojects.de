@@ -2,12 +2,13 @@ import Gio from 'gi://Gio';
 import Adw from 'gi://Adw';
 import Gtk from 'gi://Gtk';
 
+
 import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 
 export default class ExamplePreferences extends ExtensionPreferences {
-    fillPreferencesWindow(window) {
 
+    create_ui(window) {
         const speakerList = new Gtk.StringList();
         const headphoneList = new Gtk.StringList();
         speakerList.append('Automatic');
@@ -69,5 +70,9 @@ export default class ExamplePreferences extends ExtensionPreferences {
             Gio.SettingsBindFlags.DEFAULT);
         window._settings.bind('headphone', headphone, 'active',
             Gio.SettingsBindFlags.DEFAULT);
+    }
+
+    fillPreferencesWindow(window) {
+        this.create_ui(window)
     }
 }
