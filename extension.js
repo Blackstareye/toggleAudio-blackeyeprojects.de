@@ -26,6 +26,7 @@ import MixerControlFacade from './lib/MixerControl.js';
 
 
 const DEBUG=true
+const CLEAR_SCHEMA_ON_START= true;
 
 /**
  * GObject Class for audio switch via toggle
@@ -47,8 +48,6 @@ class AudioOutputToggle extends QuickToggle {
 const DebugButton = GObject.registerClass(
     class DebugButton extends QuickSettingsItem {
 
-        _clickHandler = null; 
-
         _init(mixerControl) {
             super._init({
                 style_class: 'icon-button',
@@ -60,12 +59,7 @@ const DebugButton = GObject.registerClass(
             
 
             // connect to debug button
-            this._clickHandler = this.connect('clicked', () => mixerControl.printInfos());
-        }
-
-        destroy() {
-            this.disconnect(this._clickHandler);
-            this._clickHandler = null;
+            this.connect('clicked', () => mixerControl.printInfos());
         }
     });
         
@@ -101,16 +95,27 @@ class AudioOutputToggleIndicator extends SystemIndicator {
 export default class QuickSettingsExampleExtension extends Extension {
 
     _mixerControlFacade = null;
+    _settingsInstance = null;
     enable() {
-        this._mixerControlFacade = new MixerControlFacade(this.metadata.name);
+        this._settingsInstance = this.getSettings();
+        if (CLEAR_SCHEMA_ON_START) {
+            this._settingsInstance.reset("output-devices-available");
+        }
+        this._mixerControlFacade = new MixerControlFacade(this.metadata.name, this._settingsInstance);
         this._indicator = new AudioOutputToggleIndicator(this._mixerControlFacade);
         Main.panel.statusArea.quickSettings.addExternalIndicator(this._indicator);
     }
 
     disable() {
+        if (DEBUG) {
+            console.log(`Disabling Extension`);
+        }
         this._mixerControlFacade.destroy();
-        this._indicator.quickSettingsItems.forEach(item => item.destroy());
-        this._indicator.destroy();
+        this._settingsInstance = null;
 
+        this._indicator.quickSettingsItems.forEach(item => item.destroy());
+        this._indicator.quickSettingsItems = null;
+        this._indicator.destroy();
+        this._indicator = null;
     }
 }
