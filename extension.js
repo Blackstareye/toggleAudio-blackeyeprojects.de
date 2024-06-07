@@ -32,7 +32,7 @@ import MixerControlFacade from './lib/MixerControl.js';
 
 
 const DEBUG=true
-const CLEAR_SCHEMA_ON_START= false;
+const CLEAR_SCHEMA_ON_START= true;
 
 /**
  * GObject Class for audio switch via toggle

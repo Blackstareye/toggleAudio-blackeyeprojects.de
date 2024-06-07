@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
   <schema id="org.gnome.shell.extensions.toggle-audio" path="/org/gnome/shell/extensions/toggle-audio/">
-    <key name="headphone" type="s">
-      <default>''</default>
+    <key name="headphone" type="(iss)">
+      <default>(0,'','')</default>
       <summary>''</summary>
+      <description>Touple of (runtime_id, description, name)</description>
     </key>
-    <key name="speaker" type="s">
-      <default>''</default>
+    <key name="speaker" type="(iss)">
+      <default>(0,'','')</default>
       <summary>''</summary>
+      <description>Touple of (runtime_id, description, name)</description>
     </key>
     <key name="output-devices-available" type="a{is}">
       <default>[]</default>
