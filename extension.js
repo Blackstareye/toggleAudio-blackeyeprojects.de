@@ -18,7 +18,7 @@
 
 
 // TODO Audio devices get added again, after disabling and enabling
-
+// TODO constans instead of strings
 /**
  * Audiodevices in Preferences are only visible if 
  */
@@ -84,12 +84,23 @@ class AudioOutputToggleIndicator extends SystemIndicator {
 
         this._indicator = this._addIndicator();
         this._indicator.iconName = 'audio-headphones';
+        
+
 
         const toggle = new AudioOutputToggle();
         settings.bind('headphone-on', toggle, 'checked', Gio.SettingsBindFlags.DEFAULT);
-        // toggle.bind('visible',
-        //     this._indicator, 'headphone-on',
-        //     GObject.BindingFlags.SYNC_CREATE);
+        settings.connect("changed::headphone-on", (_,k) => {
+            let v = settings.get_boolean(k);
+            console.log("CHANGE ICON: Change detected!: key is now " + v);
+            if(v) {
+                // toggle to headphone
+                this._indicator.iconName = 'audio-headphones';
+            } else {
+                this._indicator.iconName = 'audio-card-symbolic';
+            }
+        });
+        
+
         this.quickSettingsItems.push(toggle);
 
         // for debug purpose, there is an print output button 
