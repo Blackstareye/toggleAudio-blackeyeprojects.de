@@ -118,7 +118,7 @@ export default class QuickSettingsExampleExtension extends Extension {
     enable() {
         this._settingsInstance = this.getSettings();
         if (CLEAR_SCHEMA_ON_START) {
-            this._settingsInstance.reset("output-devices-available");
+            // this._settingsInstance.reset("output-devices-available");
         }
         this._mixerControlFacade = new MixerControlFacade(this.metadata.name, this._settingsInstance);
         this._indicator = new AudioOutputToggleIndicator(this._mixerControlFacade, this._settingsInstance);
@@ -130,7 +130,7 @@ export default class QuickSettingsExampleExtension extends Extension {
             console.log(`Disabling Extension`);
         }
         this._mixerControlFacade.destroy();
-        this._settingsInstance.reset("output-devices-available");
+        // this._settingsInstance.reset("output-devices-available");
         this._settingsInstance = null;
 
         this._indicator.quickSettingsItems.forEach(item => item.destroy());

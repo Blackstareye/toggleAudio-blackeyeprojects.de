@@ -10,12 +10,20 @@ export default class ExamplePreferences extends ExtensionPreferences {
 
     _settingsInstance = null;
     _outputDeviceMap = null;
+    // _currentHeadphoneValue=null;
+    // _currentSpeakerValue=null;
     _reverseLookUpDeviceMap = new Map();
 
     unpackSettings() {
         this._settingsInstance = this.getSettings();
         // FIXME parse wirft error
         this._outputDeviceMap = this._settingsInstance.get_value("output-devices-available").recursiveUnpack();
+        // TODO maybe bind is better?
+        // let headphoneSet = this._settingsInstance.get_value("headphone");
+        // let speakerSet = this._settingsInstance.get_value("speaker");
+        // this._currentSpeakerValue = (headphoneSet && headphoneSet.length === 3) ? headphoneSet[1] : 0;
+        // this._currentHeadphoneValue = this._settingsInstance.get_value("headphone")[1];
+        // this._currentSpeakerValue = this._settingsInstance.get_value("speaker")[1];
         console.log(this._outputDeviceMap);
         console.log(typeof(this._outputDeviceMap));
     }
