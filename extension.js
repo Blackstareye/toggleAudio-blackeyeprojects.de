@@ -25,6 +25,7 @@
 
 // imports
 import GObject from 'gi://GObject';
+import Gio from 'gi://Gio';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import {Extension, gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
 import {QuickSettingsItem, QuickToggle, SystemIndicator} from 'resource:///org/gnome/shell/ui/quickSettings.js';
@@ -78,16 +79,17 @@ const DebugButton = GObject.registerClass(
  */
 const AudioOutputToggleIndicator = GObject.registerClass(
 class AudioOutputToggleIndicator extends SystemIndicator {
-    constructor(mixerControlFacade) {
+    constructor(mixerControlFacade, settings) {
         super();
 
         this._indicator = this._addIndicator();
         this._indicator.iconName = 'audio-headphones';
 
         const toggle = new AudioOutputToggle();
-        toggle.bind_property('checked',
-            this._indicator, 'visible',
-            GObject.BindingFlags.SYNC_CREATE);
+        settings.bind('headphone-on', toggle, 'checked', Gio.SettingsBindFlags.DEFAULT);
+        // toggle.bind('visible',
+        //     this._indicator, 'headphone-on',
+        //     GObject.BindingFlags.SYNC_CREATE);
         this.quickSettingsItems.push(toggle);
 
         // for debug purpose, there is an print output button 
@@ -108,7 +110,7 @@ export default class QuickSettingsExampleExtension extends Extension {
             this._settingsInstance.reset("output-devices-available");
         }
         this._mixerControlFacade = new MixerControlFacade(this.metadata.name, this._settingsInstance);
-        this._indicator = new AudioOutputToggleIndicator(this._mixerControlFacade);
+        this._indicator = new AudioOutputToggleIndicator(this._mixerControlFacade, this._settingsInstance);
         Main.panel.statusArea.quickSettings.addExternalIndicator(this._indicator);
     }
 

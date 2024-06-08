@@ -34,7 +34,7 @@ export default class ExamplePreferences extends ExtensionPreferences {
             if (Object.prototype.hasOwnProperty.call(this._outputDeviceMap, key)) {
                 console.log("KEY:VALUE:");
                 console.log(key, this._outputDeviceMap[key]);
-                this._reverseLookUpDeviceMap.set(this._outputDeviceMap[key], key);
+                this._reverseLookUpDeviceMap.set(this._outputDeviceMap[key][0], key);
             }
         }
 
@@ -95,25 +95,24 @@ export default class ExamplePreferences extends ExtensionPreferences {
 
         // bind the settings
         
-        headphone.connect(`notify::selected-item`, () => {
-            let item = Object.assign(headphone.selected_item, Gtk.StringObject);
+        let storeSelectedDevice = function (key, origin, this_ref) {
+            let item = Object.assign(origin.selected_item, Gtk.StringObject);
             let text = item.get_string();
             console.log(`selected: ${text}`);
-            console.log(this._reverseLookUpDeviceMap.has(text));
+            console.log(this_ref._reverseLookUpDeviceMap.has(text));
             // lookup reverse
-            let id = this._reverseLookUpDeviceMap.get(text);
-            this._settingsInstance.set_value('headphone', new GLib.Variant("(iss)", [id,text, '']));
+            // TODO meta_data necessary ?
+            let id = this_ref._reverseLookUpDeviceMap.get(text);
+            let meta_data = this_ref._outputDeviceMap[id][1];
+            this_ref._settingsInstance.set_value(key, new GLib.Variant("(iss)", [id,text, meta_data]));
+        };
+
+        // TODO disabling/disconnecting necessary 
+        headphone.connect(`notify::selected-item`, () => {
+            storeSelectedDevice('headphone', headphone, this);
         });
         speaker.connect(`notify::selected-item`, () => {
-            let item = Object.assign(speaker.selected_item, Gtk.StringObject);
-            let text = item.get_string();
-            console.log(`selected: ${text}`);
-            console.log(this._reverseLookUpDeviceMap.has(text));
-            // lookup reverse
-            let id = this._reverseLookUpDeviceMap.get(text);
-            console.log("id:" + id);
-            console.log(JSON.stringify(this._reverseLookUpDeviceMap));
-            this._settingsInstance.set_value('speaker', new GLib.Variant("(iss)", [id,text, '']));
+            storeSelectedDevice('speaker', speaker, this);
         });
     }
 
