@@ -1,5 +1,5 @@
 # Steps
 
 1. Display Audios in Prefs
-2. Use MixerStream.name instead of ids
-3. implement Toggle Default Sink action 
+   1. ADD current Value as first value (TODO)
+2. Implement new ui design, see notes (toggleMenu and then list selection instead pref)
