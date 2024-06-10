@@ -14,11 +14,11 @@ export default class ToggleAudioPreferences extends ExtensionPreferences {
     _currentSpeakerValue=null;
     _reverseLookUpDeviceMap = new Map();
 
-    unpackSettings() {
-        this._settingsInstance = this.getSettings();
-        this._outputDeviceMap = this._settingsInstance.get_value("output-devices-available").recursiveUnpack();
-        let headphoneSet = this._settingsInstance.get_value("headphone").recursiveUnpack();
-        let speakerSet = this._settingsInstance.get_value("speaker").recursiveUnpack();
+    unpackSettings(window) {
+        window._settingsInstance = this.getSettings();
+        this._outputDeviceMap = window._settingsInstance.get_value("output-devices-available").recursiveUnpack();
+        let headphoneSet = window._settingsInstance.get_value("headphone").recursiveUnpack();
+        let speakerSet = window._settingsInstance.get_value("speaker").recursiveUnpack();
         
         console.debug(`Speakerset: Description:${speakerSet[1]} #${speakerSet.length}`);
         console.debug(`Headset: Description:${headphoneSet[1]} #${headphoneSet.length}`);
@@ -28,7 +28,7 @@ export default class ToggleAudioPreferences extends ExtensionPreferences {
 
 
     create_ui(window) {
-        this.unpackSettings();
+        this.unpackSettings(window);
         for (let key in this._outputDeviceMap) {
             // // es-lint no-prototype-builtins fix
             if (Object.prototype.hasOwnProperty.call(this._outputDeviceMap, key)) {
@@ -61,19 +61,18 @@ export default class ToggleAudioPreferences extends ExtensionPreferences {
         const page = new Adw.PreferencesPage({
             title: _('Preferences'),
             icon_name: 'dialog-information-symbolic',
-            description: 'This will be refreshed'
+            description: `If the toggle button is true (indicator icon is a headphone), the selected 'Headphone' device will be used as default audio output device. Otherwise the 'Speaker' device will be used.`
         });
         window.add(page);
 
         const group = new Adw.PreferencesGroup({
-            title: _('Devices'),
+            title: _('Output Devices'),
             description: _('Select your Speaker and Headphone Device'),
         });
         page.add(group);
 
         const speaker = new Adw.ComboRow({
             title: _('Speaker'),
-            subtitle: _('Whether to show the panel indicator'),
             model: deviceList,
             selected: indexOfSelectedSpeaker,
         });
@@ -81,7 +80,6 @@ export default class ToggleAudioPreferences extends ExtensionPreferences {
 
         const headphone = new Adw.ComboRow({
             title: _('Headphone'),
-            subtitle: _('Whether to show the panel indicator'),
             model: deviceList,
             selected: indexOfSelectedHeadphone,
         });
@@ -97,7 +95,7 @@ export default class ToggleAudioPreferences extends ExtensionPreferences {
             console.debug(`is in device list: ${this_ref._reverseLookUpDeviceMap.has(text)}`);
             let id = this_ref._reverseLookUpDeviceMap.get(text);
             let metaData = this_ref._outputDeviceMap[id][1];
-            this_ref._settingsInstance.set_value(key, new GLib.Variant("(iss)", [id,text, metaData]));
+            window._settingsInstance.set_value(key, new GLib.Variant("(iss)", [id,text, metaData]));
         };
 
         headphone.connect(`notify::selected-item`, () => {
