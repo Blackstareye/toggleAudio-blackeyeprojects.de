@@ -10,8 +10,8 @@ export default class ExamplePreferences extends ExtensionPreferences {
 
     _settingsInstance = null;
     _outputDeviceMap = null;
-    // _currentHeadphoneValue=null;
-    // _currentSpeakerValue=null;
+    _currentHeadphoneValue=null;
+    _currentSpeakerValue=null;
     _reverseLookUpDeviceMap = new Map();
 
     unpackSettings() {
@@ -19,14 +19,14 @@ export default class ExamplePreferences extends ExtensionPreferences {
         // FIXME parse wirft error
         this._outputDeviceMap = this._settingsInstance.get_value("output-devices-available").recursiveUnpack();
         // TODO maybe bind is better?
-        // let headphoneSet = this._settingsInstance.get_value("headphone");
-        // let speakerSet = this._settingsInstance.get_value("speaker");
-        // this._currentSpeakerValue = (headphoneSet && headphoneSet.length === 3) ? headphoneSet[1] : 0;
-        // this._currentHeadphoneValue = this._settingsInstance.get_value("headphone")[1];
-        // this._currentSpeakerValue = this._settingsInstance.get_value("speaker")[1];
-        console.log(this._outputDeviceMap);
-        console.log(typeof(this._outputDeviceMap));
+        let headphoneSet = this._settingsInstance.get_value("headphone").recursiveUnpack();
+        let speakerSet = this._settingsInstance.get_value("speaker").recursiveUnpack();
+        console.log(`Speakerset: ${speakerSet[1]} #${speakerSet.length}`);
+        console.log(`Headset: ${headphoneSet[1]} #${headphoneSet.length}`);
+        this._currentSpeakerValue = (speakerSet && speakerSet.length === 3) ? speakerSet[1] : undefined;
+        this._currentHeadphoneValue = (headphoneSet && headphoneSet.length === 3) ? headphoneSet[1] : undefined;
     }
+
 
     create_ui(window) {
         this.unpackSettings();
@@ -46,6 +46,7 @@ export default class ExamplePreferences extends ExtensionPreferences {
             }
         }
 
+
         // TODO maybe check one value
         // let beautyPrint="";
         // for (const [key, value] of this._reverseLookUpDeviceMap) {
@@ -55,11 +56,28 @@ export default class ExamplePreferences extends ExtensionPreferences {
         // console.log(`Look up String Link:\n` + beautyPrint);
         
         const deviceList = new Gtk.StringList();
+
         // we need a array and need to put all in the device list
-        [ ...this._reverseLookUpDeviceMap.keys()].map(e => {
+        let indexOfSelectedSpeaker = 0;//deviceList.keys().findIndex(this._currentSpeakerValue);
+        let indexOfSelectedHeadphone = 0;//deviceList.keys().findIndex(this._currentHeadphoneValue);
+        console.log(`Debugging Values: Headphone:${this._currentHeadphoneValue}, Speaker: ${this._currentSpeakerValue}`);
+        [ ...this._reverseLookUpDeviceMap.keys()].map( (e, index) => {
+                console.log(`Stepping to: ${e}, ${index}`);
+                if (this._currentHeadphoneValue && this._currentHeadphoneValue === e) {
+                    console.log(`Found Entry in headphone list: ${e}, ${index}`);
+                    indexOfSelectedHeadphone = index;
+                }
+                if (this._currentSpeakerValue && this._currentSpeakerValue === e) {
+                    console.log(`Found Entry in speaker list: ${e}, ${index}`);
+                    indexOfSelectedSpeaker = index;
+                }
                 deviceList.append(e);
-            }
+        }
         );
+
+
+        console.log(`headphone: ${indexOfSelectedHeadphone}, speaker: ${indexOfSelectedSpeaker}`);
+
         // Create a preferences page, with a single group
         const page = new Adw.PreferencesPage({
             title: _('Preferences'),
@@ -80,7 +98,7 @@ export default class ExamplePreferences extends ExtensionPreferences {
             title: _('Speaker'),
             subtitle: _('Whether to show the panel indicator'),
             model: deviceList,
-            selected: 0,
+            selected: indexOfSelectedSpeaker,
         });
 
 
@@ -88,7 +106,7 @@ export default class ExamplePreferences extends ExtensionPreferences {
             title: _('Headphone'),
             subtitle: _('Whether to show the panel indicator'),
             model: deviceList,
-            selected: 0,
+            selected: indexOfSelectedHeadphone,
         });
 
 
@@ -127,6 +145,8 @@ export default class ExamplePreferences extends ExtensionPreferences {
     fillPreferencesWindow(window) {
         this.create_ui(window)
     }
+
+    
 }
 
 
