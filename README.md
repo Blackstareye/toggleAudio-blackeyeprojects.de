@@ -1,5 +1,20 @@
-# Steps
+# ToggleAudio Extension
 
-1. Display Audios in Prefs
-   1. ADD current Value as first value (TODO)
-2. Implement new ui design, see notes (toggleMenu and then list selection instead pref)
+
+## Next Version
+
+Queued:
+   * Change Toggle Button to ToggleButton with Menu, and move Pref to this menu instead of pref settings.
+
+## Thanks and credit to:
+
+
+* [audio-selector@harald65.simon.gmail.com](https://github.com/hs65/Gnome-Shell-Extension-Audio-Selector)
+* [quicksettings-audio-devices-hider@marcinjahn.com](https://github.com/marcinjahn/gnome-quicksettings-audio-devices-hider-extension)
+
+* [mediacontrols@cliffniff.github.com](https://github.com/cliffniff/media-controls)
+
+their code helped me to understand `Gvc.MixerControl` better.
+
+Also thanks to #extensions:gnome.org (Matrix) and their people for helping me :)
+
