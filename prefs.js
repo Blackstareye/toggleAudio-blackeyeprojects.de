@@ -4,7 +4,6 @@ import GLib from 'gi://GLib';
 
 
 import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
-import { DEBUG } from './lib/Constants';
 
 
 export default class ToggleAudioPreferences extends ExtensionPreferences {

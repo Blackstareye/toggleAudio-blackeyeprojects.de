@@ -79,7 +79,7 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         settings.bind('headphone-on', toggle, 'checked', Gio.SettingsBindFlags.DEFAULT);
         settings.connect("changed::headphone-on", (_,k) => {
             let v = settings.get_boolean(k);
-            console.trace("CHANGE ICON: Change detected!: key is now " + v);
+            console.debug("CHANGE ICON: Change detected!: key is now " + v);
             if(v) {
                 // toggle to headphone
                 this._indicator.iconName = 'audio-headphones';
@@ -117,7 +117,7 @@ export default class ToggleAudioExtension extends Extension {
         }
         // destroy MixerFacade
         this._mixerControlFacade.destroy();
-        
+
         this._settingsInstance = null;
         this._indicator.quickSettingsItems.forEach(item => item.destroy());
         this._indicator.quickSettingsItems = null;
