@@ -17,23 +17,16 @@
  */
 
 
-// TODO Audio devices get added again, after disabling and enabling
-// TODO constans instead of strings
-/**
- * Audiodevices in Preferences are only visible if 
- */
-
 // imports
 import GObject from 'gi://GObject';
 import Gio from 'gi://Gio';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+import {DEBUG} from './lib/Constants.js';
 import {Extension, gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
 import {QuickSettingsItem, QuickToggle, SystemIndicator} from 'resource:///org/gnome/shell/ui/quickSettings.js';
-import MixerControlFacade from './lib/MixerControl.js';
+import MixerControlFacade from './lib/MixerControlFacade.js';
 
 
-const DEBUG=true
-const CLEAR_SCHEMA_ON_START= true;
 
 /**
  * GObject Class for audio switch via toggle
@@ -62,9 +55,6 @@ const DebugButton = GObject.registerClass(
                 icon_name: 'dialog-information',
                 accessible_name: _('show debug infos'),
             });
-
-            
-
             // connect to debug button
             this.connect('clicked', () => mixerControl.printInfos());
         }
@@ -84,14 +74,12 @@ class AudioOutputToggleIndicator extends SystemIndicator {
 
         this._indicator = this._addIndicator();
         this._indicator.iconName = 'audio-headphones';
-        
-
 
         const toggle = new AudioOutputToggle();
         settings.bind('headphone-on', toggle, 'checked', Gio.SettingsBindFlags.DEFAULT);
         settings.connect("changed::headphone-on", (_,k) => {
             let v = settings.get_boolean(k);
-            console.log("CHANGE ICON: Change detected!: key is now " + v);
+            console.trace("CHANGE ICON: Change detected!: key is now " + v);
             if(v) {
                 // toggle to headphone
                 this._indicator.iconName = 'audio-headphones';
@@ -100,9 +88,7 @@ class AudioOutputToggleIndicator extends SystemIndicator {
             }
         });
         
-
         this.quickSettingsItems.push(toggle);
-
         // for debug purpose, there is an print output button 
         if (DEBUG) {
             this.quickSettingsItems.push(new DebugButton(mixerControlFacade));
@@ -111,15 +97,15 @@ class AudioOutputToggleIndicator extends SystemIndicator {
 
 });
 
-export default class QuickSettingsExampleExtension extends Extension {
+/**
+ * This extension toggles between 2 pre-defined output audio sources
+ */
+export default class ToggleAudioExtension extends Extension {
 
     _mixerControlFacade = null;
     _settingsInstance = null;
     enable() {
         this._settingsInstance = this.getSettings();
-        if (CLEAR_SCHEMA_ON_START) {
-            // this._settingsInstance.reset("output-devices-available");
-        }
         this._mixerControlFacade = new MixerControlFacade(this.metadata.name, this._settingsInstance);
         this._indicator = new AudioOutputToggleIndicator(this._mixerControlFacade, this._settingsInstance);
         Main.panel.statusArea.quickSettings.addExternalIndicator(this._indicator);
@@ -127,12 +113,12 @@ export default class QuickSettingsExampleExtension extends Extension {
 
     disable() {
         if (DEBUG) {
-            console.log(`Disabling Extension`);
+            console.debug(`Disabling Extension`);
         }
+        // destroy MixerFacade
         this._mixerControlFacade.destroy();
-        // this._settingsInstance.reset("output-devices-available");
+        
         this._settingsInstance = null;
-
         this._indicator.quickSettingsItems.forEach(item => item.destroy());
         this._indicator.quickSettingsItems = null;
         this._indicator.destroy();
