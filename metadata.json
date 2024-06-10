@@ -3,7 +3,7 @@
   "description": "Toggles between 2 pre-defined audio sources, labeled as 'headphone' and 'speaker'.",
   "uuid": "toggleAudio@blackeyeprojects.de",
   "shell-version": [
-    "45", "46"
+    "45"
   ],
   "settings-schema": "org.gnome.shell.extensions.toggle-audio",
   "gettext-domain": "toggleAudio@blackeyeprojects.de",
