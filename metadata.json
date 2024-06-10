@@ -2,6 +2,7 @@
   "name": "Toggle Headphone",
   "description": "Toggles between 2 pre-defined audio sources, labeled as 'headphone' and 'speaker'.",
   "uuid": "toggleAudio@blackeyeprojects.de",
+  "url": "https://github.com/Blackstareye/toggleAudio-blackeyeprojects.de",
   "shell-version": [
     "45"
   ],
