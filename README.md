@@ -7,6 +7,7 @@ with 2 audio devices:
         * Ubuntu 24.04 (hardware)
     Gnome 45:
         * Ubuntu 23.10 (VM)
+        * Nobara 39
 
 ## Next Version
 
