@@ -2,11 +2,7 @@
 
 ## Next Version
 
-Known issues that will be fixed:
-
-* Sometimes the first button will miss, cause the devices are not ready. This will be fixed in the next minor version
-
-Queued:
+Ideas:
 
 * Change Toggle Button to ToggleButton with Menu, and move Pref to this menu instead of pref settings.
 
