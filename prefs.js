@@ -1,6 +1,5 @@
 import Adw from 'gi://Adw';
 import Gtk from 'gi://Gtk';
-import GLib from 'gi://GLib';
 
 
 import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
@@ -34,9 +33,9 @@ export default class ToggleAudioPreferences extends ExtensionPreferences {
         //this._outputDeviceMap = window._settingsInstance.get_value("output-devices-available").recursiveUnpack();
 
         // TOIMPROVE try bind 
-        let headphoneSet = window._settingsInstance.get_value("headphone").recursiveUnpack();
-        let speakerSet = window._settingsInstance.get_value("speaker").recursiveUnpack();
-        
+        let headphoneSet = this._settingProvider.getHeadphone();
+        let speakerSet = this._settingProvider.getSpeaker();
+
         console.debug(`Speakerset: Description:${speakerSet[1]} #${speakerSet.length}`);
         console.debug(`Headset: Description:${headphoneSet[1]} #${headphoneSet.length}`);
         this._currentSpeakerValue = (speakerSet && speakerSet.length === 3) ? speakerSet[1] : undefined;
@@ -137,7 +136,7 @@ export default class ToggleAudioPreferences extends ExtensionPreferences {
         page.add(group);
 
 
-        if (DEBUG) {
+        if (Constants.DEBUG) {
             let debugWindow = DebugHelper.createDebugBanner(group);
             let debugWindow2 = DebugHelper.createDebugBanner(group);
             
@@ -161,7 +160,53 @@ export default class ToggleAudioPreferences extends ExtensionPreferences {
 
         group.add(this._speakerModel);
         group.add(this._headphoneModel);
+
+        let storeSelectedDevice = function (key, origin, this_ref) {
+            let item = Object.assign(origin.selected_item, Gtk.StringObject);
+            let text = item.get_string();
+            console.debug(`selected: ${text}`);
+            console.debug(`is in device list: ${this_ref._reverseLookUpDeviceMap.has(text)}`);
+            let id = this_ref._reverseLookUpDeviceMap.get(text);
+            let metaData = this_ref._outputDeviceMap[id][1];
+            window._settingsInstance.set_value(key, new GLib.Variant("(iss)", [id,text, metaData]));
+        };
+
+        // headphone.bind('model', this, '_listModelOfDevices', Gio.SettingsBindFlags.DEFAULT);
+        // headphone.bind('selected', this, '_indexHeadphoneModel', Gio.SettingsBindFlags.DEFAULT);
+        // speaker.bind('model', this, '_listModelOfDevices', Gio.SettingsBindFlags.DEFAULT);
+        // speaker.bind('selected', this, '_indexSpeakerModel', Gio.SettingsBindFlags.DEFAULT);
+        storeSelectedDevice = function (origin, this_ref) {
+            let item = Object.assign(origin.selected_item, Gtk.StringObject);
+            let text = item.get_string();
+            console.debug(`selected: ${text}`);
+            console.debug(`is in device list: ${this_ref._reverseLookUpDeviceMap.has(text)}`);
+            let id = this_ref._reverseLookUpDeviceMap.get(text);
+            let deviceItem =  this_ref._outputDeviceMap.getItem(id);
+            let metaData = deviceItem[1];
+            return [id, text,metaData];
+        };
+
+
+        this._headphoneModel.connect(`notify::selected-item`, () => {
+            this._settingProvider.setHeadphone(this._packData(this._headphoneModel.selected_item));
+            
+        });
+        this._speakerModel.connect(`notify::selected-item`, () => {
+            this._settingProvider.setSpeaker(this._packData(this._speakerModel.selected_item));
+        });
     }
+
+    _packData (selectedItem) {
+        let item = Object.assign(selectedItem, Gtk.StringObject);
+        let text = item.get_string();
+        console.log(`selected: ${text}`);
+        console.log(`is in device list: ${this._reverseLookUpDeviceMap.has(text)}`);
+        let id = this._reverseLookUpDeviceMap.get(text);
+        let deviceItem =  this._outputDeviceMap.getItem(id);
+        let metaData = deviceItem[1];
+        return [id, text,metaData];
+    }
+    
 
     fillPreferencesWindow(window) {
         this.create_ui(window)
