@@ -21,7 +21,7 @@
 import GObject from 'gi://GObject';
 import Gio from 'gi://Gio';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
-import {DEBUG} from './lib/Constants.js';
+import {DEBUG} from './lib/util/Constants.js';
 import {Extension, gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
 import {QuickSettingsItem, QuickToggle, SystemIndicator} from 'resource:///org/gnome/shell/ui/quickSettings.js';
 import MixerControlFacade from './lib/MixerControlFacade.js';

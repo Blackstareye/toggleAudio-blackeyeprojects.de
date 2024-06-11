@@ -6,8 +6,9 @@ import GLib from 'gi://GLib';
 import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 import SettingProvider from './lib/SettingProvider.js';
 import OutputDeviceList from './lib/OutputDeviceList.js';
-import Printer from './lib/Printer.js';
-import DebugHelper from './lib/DebugHelper.js';
+import * as Constants from './lib/util/Constants.js';
+import Printer from './lib/util/Printer.js';
+import DebugHelper from './lib/util/DebugHelper.js';
 
 
 export default class ToggleAudioPreferences extends ExtensionPreferences {
