@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-10 15:56+0200\n"
+"POT-Creation-Date: 2024-06-11 23:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,34 +17,30 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: extension.js:45
+#: extension.js:38
 msgid "Switch Headphone"
 msgstr ""
 
-#: extension.js:63
+#: extension.js:56
 msgid "show debug infos"
 msgstr ""
 
-#: prefs.js:83
+#: prefs_complete.js:131 prefs.js:118
 msgid "Preferences"
 msgstr ""
 
-#: prefs.js:90
-msgid "Devices"
+#: prefs_complete.js:138 prefs.js:125
+msgid "Output Devices"
 msgstr ""
 
-#: prefs.js:91
+#: prefs_complete.js:139 prefs.js:126
 msgid "Select your Speaker and Headphone Device"
 msgstr ""
 
-#: prefs.js:98
+#: prefs_complete.js:158 prefs.js:141
 msgid "Speaker"
 msgstr ""
 
-#: prefs.js:99 prefs.js:107
-msgid "Whether to show the panel indicator"
-msgstr ""
-
-#: prefs.js:106
+#: prefs_complete.js:165 prefs.js:148
 msgid "Headphone"
 msgstr ""
