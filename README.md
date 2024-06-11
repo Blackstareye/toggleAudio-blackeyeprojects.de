@@ -1,9 +1,18 @@
 # ToggleAudio Extension
 
+## Tested on
+
+with 2 audio devices:
+    Gnome 46:
+        * Ubuntu 24.04 (hardware)
+    Gnome 45:
+        * Ubuntu 23.10 (VM)
+
 ## Next Version
 
 Ideas:
 
+* Disable Toggle Button as long Connection is not possible instead just queuing  
 * Change Toggle Button to ToggleButton with Menu, and move Pref to this menu instead of pref settings.
 
 ## Thanks and credit to
