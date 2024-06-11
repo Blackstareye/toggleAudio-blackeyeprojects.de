@@ -3,11 +3,12 @@
 ## Tested on
 
 with 2 audio devices:
-    Gnome 46:
-        * Ubuntu 24.04 (hardware)
-    Gnome 45:
-        * Ubuntu 23.10 (VM)
-        * Nobara 39
+
+* Gnome 46:
+  * Ubuntu 24.04 (hardware)
+* Gnome 45:
+    * Ubuntu 23.10 (VM)
+    * Nobara 39
 
 ## Next Version
 
