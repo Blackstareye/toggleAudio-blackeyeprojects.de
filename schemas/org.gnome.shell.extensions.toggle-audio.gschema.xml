@@ -4,7 +4,12 @@
     <key name="headphone-on" type="b">
       <default>false</default>
       <summary>''</summary>
-      <description>Touple of (runtime_id, description, name)</description>
+      <description>State of the toggle button</description>
+    </key>
+    <key name="mixercontrol-is-ready-for-action" type="b">
+      <default>false</default>
+      <summary>''</summary>
+      <description>State of the mixercontrol if it is ready taking actions</description>
     </key>
     <key name="headphone" type="(iss)">
       <default>(0,'','')</default>
@@ -18,7 +23,7 @@
     </key>
     <key name="output-devices-available" type="a{i(ss)}">
       <default>[]</default>
-      <description>A dictionary of (id; description) output devices</description>
+      <description>A dictionary of (runtime_id; description, name) output devices</description>
     </key>
   </schema>
 </schemalist>
