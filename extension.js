@@ -117,6 +117,7 @@ export default class ToggleAudioExtension extends Extension {
         }
         // destroy MixerFacade
         this._mixerControlFacade.destroy();
+        this._mixerControlFacade = null;
 
         this._settingsInstance = null;
         this._indicator.quickSettingsItems.forEach(item => item.destroy());

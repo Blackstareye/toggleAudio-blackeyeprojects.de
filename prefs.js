@@ -7,7 +7,7 @@ import SettingProvider from './lib/SettingProvider.js';
 import OutputDeviceList from './lib/OutputDeviceList.js';
 import * as Constants from './lib/util/Constants.js';
 import Printer from './lib/util/Printer.js';
-import DebugHelper from './lib/util/DebugHelper.js';
+import DebugHelper from './lib/util/preferencewindow/DebugHelper.js';
 
 
 export default class ToggleAudioPreferences extends ExtensionPreferences {
