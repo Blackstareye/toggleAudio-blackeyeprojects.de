@@ -1,5 +1,20 @@
 # ToggleAudio Extension
 
+![alt text](img/thumbnail.png)
+
+## Screenshots
+
+![alt text](img/settings.png)
+
+set your Audio-Devices in preferences - Note: it must be separated devices, not a shared one with different ports (like build in Speaker/Headphone devices)
+
+
+then you can swithc between those `devices` with a click of a button:
+
+![alt text](img/speaker.png) ![alt text](img/headphone.png)
+
+(you can see the switch in the volume output device window above called `Tonausgang` here)
+
 ## Tested on
 
 with 2 audio devices:
