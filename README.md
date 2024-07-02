@@ -20,6 +20,9 @@ then you can switch between those `devices` with a click of a button:
  
  In that case only one device can be seen in the preference selection window.
 
+ You can also control if you want to have a system icon tray or not with the `Show Indicator` switch.
+ If `true` the icon is shown.
+
 ## Tested on
 
 with 2 audio devices:
