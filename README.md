@@ -2,13 +2,11 @@
 
 ![alt text](img/thumbnail.png)
 
-
 Settings
 
 ![alt text](img/settings.png)
 
 set your `headphone` and `speaker` devices in preferences
-
 
 then you can switch between those `devices` with a click of a button:
 
@@ -16,11 +14,11 @@ then you can switch between those `devices` with a click of a button:
 
 (you can see the switch between the audio sources in the volume output device window above called `Tonausgang` here)
 
- Note: the devices for `headphone` and `speaker` must be two separated devices, and not a shared one with different ports (like build in Speaker/Headphone devices). 
- 
+ Note: the devices for `headphone` and `speaker` must be two separated devices, and not a shared one with different ports (like build in Speaker/Headphone devices).
+
  In that case only one device can be seen in the preference selection window.
 
- You can also control if you want to have a system icon tray or not with the `Show Indicator` switch.
+ With the `Show Indicator` switch you can also control if you want to show a system icon tray or not.
  If `true` the icon is shown.
 
 ## Tested on
@@ -30,8 +28,8 @@ with 2 audio devices:
 * Gnome 46:
   * Ubuntu 24.04 (hardware)
 * Gnome 45:
-    * Ubuntu 23.10 (VM)
-    * Nobara 39
+  * Ubuntu 23.10 (VM)
+  * Nobara 39
 
 ## Next Version
 
@@ -55,6 +53,6 @@ Also thanks to #extensions:gnome.org (Matrix) and their people for helping me :)
 
 If you like my work and want to support me, then this is the way:
 
-- [kofi](https://ko-fi.com/black_eye)
+* [kofi](https://ko-fi.com/black_eye)
 
 Many Thanks ♥
