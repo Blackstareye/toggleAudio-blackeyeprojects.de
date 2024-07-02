@@ -79,7 +79,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         settings.bind('headphone-on', toggle, 'checked', Gio.SettingsBindFlags.DEFAULT);
         settings.connect("changed::headphone-on", (_,k) => {
             let v = settings.get_boolean(k);
-            console.debug("CHANGE ICON: Change detected!: key is now " + v);
             if(v) {
                 // toggle to headphone
                 this._indicator.iconName = 'audio-headphones';
@@ -91,7 +90,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         //show icon if toggle in pref is true
         settings.connect("changed::show-indicator", (_,k) => {
             let v = settings.get_boolean(k);
-            console.debug("CHANGE ICON: Change detected!: key is now " + v);
             this._indicator.visible = v;
         });
         
