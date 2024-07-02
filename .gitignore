@@ -4,3 +4,4 @@ help/
 helper/
 export/
 !export/.gitkeep
+scripts/createSymlinkForTesting.sh
