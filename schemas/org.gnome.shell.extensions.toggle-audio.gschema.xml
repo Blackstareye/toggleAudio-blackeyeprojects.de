@@ -6,6 +6,11 @@
       <summary>''</summary>
       <description>State of the toggle button</description>
     </key>
+    <key name="show-indicator" type="b">
+      <default>true</default>
+      <summary>'True: show the icon.'</summary>
+      <description>Visibility  flag for the system indicator icon</description>
+    </key>
     <key name="mixercontrol-is-ready-for-action" type="b">
       <default>false</default>
       <summary>''</summary>
