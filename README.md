@@ -21,6 +21,23 @@ then you can switch between those `devices` with a click of a button:
  With the `Show Indicator` switch you can also control if you want to show a system icon tray or not.
  If `true` the icon is shown.
 
+ You can also use `hotkeys` for:
+
+* toggle Speaker/ Headphone
+  * default: <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>T</kbd>
+* select Speaker
+  * default: <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>S</kbd>
+* select Headphone
+  * default: <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>H</kbd>
+
+You can `enable` those in the settings:
+
+![settings show hotkey area](img/settings_2.png)
+
+>[!info] 
+> if you want to change the hotkeys, you need to do those in gsetings using `dconf`
+> the path is: 
+
 ## Tested on
 
 with 2 audio devices:
@@ -33,10 +50,12 @@ with 2 audio devices:
 
 ## Next Version
 
+Test on laptop, vm
+pack it and add it to extension gnome
+
 Ideas:
 
 * Disable Toggle Button as long Connection is not possible instead just queuing  
-* Change Toggle Button to ToggleButton with Menu, and move Pref to this menu instead of pref settings.
 
 ## Thanks and credit to
 
