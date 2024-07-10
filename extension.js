@@ -173,9 +173,10 @@ class AudioOutputToggleIndicator extends SystemIndicator {
     }
 
     
-    destroyKeybinding() {
+    destroy() {
         this._keybinder.destroy();
         this._keybinder = null;
+        super.destroy();
     }
 
 });
