@@ -68,6 +68,7 @@ const DebugButton = GObject.registerClass(
  * 
  * this is the place where the ui widgets will be added
  */
+//IMPROVEMENT: use settingsprovider here too
 const AudioOutputToggleIndicator = GObject.registerClass(
 class AudioOutputToggleIndicator extends SystemIndicator {
     _keybinder = null;
@@ -76,27 +77,17 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         super();
 
         this._indicator = this._addIndicator();
+        //TODO: refactor this to used icon
         this._indicator.iconName = 'audio-headphones';
         this._indicator.visible = settings.get_boolean("show-indicator");
         
         
         const toggle = new AudioOutputToggle();
-        this._keybinder = new Keybinder(settings).bindToggleKey(
-            fn => {
-                console.log("KEYBINDER ACTIVATED")
-                toggle.checked = !toggle.checked;
-            }
-        ).bindSpeakerKey(
-            fn => {
-                console.log("KEYBINDER ACTIVATED")
-                toggle.checked = false;
-            }
-        ).bindHeadphoneKey(
-            fn => {
-                console.log("KEYBINDER ACTIVATED")
-                toggle.checked = true;
-            }
-        );
+        this._keybinder = new Keybinder(settings);
+        
+        this.initKeybindingStateCheck(settings, toggle, this._keybinder);
+        this.addKeybindingOnChangeEvents(settings,toggle, this._keybinder);
+
 
         settings.bind('headphone-on', toggle, 'checked', Gio.SettingsBindFlags.DEFAULT);
         settings.connect("changed::headphone-on", (_,k) => {
@@ -122,6 +113,72 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         }
     }
 
+    addKeybindingOnChangeEvents(settings, toggle, keybinder) {
+       
+        settings.connect("changed::enable-toggle-headphone-key", (_,k) => {
+            let v = settings.get_boolean(k);
+            if(v) {
+                console.log("Changed toggle event")
+                keybinder.bindToggleKey(() => this._toggleState(toggle,null));
+            } else {
+                keybinder.unbindToggleKey();
+            }
+        });
+        settings.connect("changed::enable-select-speaker-key", (_,k) => {
+            let v = settings.get_boolean(k);
+            if(v) {
+                console.log("Selected Speaker event")
+                keybinder.bindSpeakerKey(() => this._toggleState(toggle,false));
+            } else {
+                keybinder.unbindSpeakerKey();
+            }
+        });
+        settings.connect("changed::enable-select-headphone-key", (_,k) => {
+            let v = settings.get_boolean(k);
+            if(v) {
+                console.log("Selected Headphone")
+                keybinder.bindHeadphoneKey(() => this._toggleState(toggle,true));
+            } else {
+                keybinder.unbindHeadphoneKey();
+            }
+        });
+    }
+    initKeybindingStateCheck(settings, toggle, keybinder) {
+        let enabled_t = settings.get_boolean("enable-toggle-headphone-key");
+        let enabled_s = settings.get_boolean("enable-select-speaker-key");
+        let enabled_h =settings.get_boolean("enable-select-headphone-key");
+        if (enabled_t) {
+            keybinder.bindToggleKey(
+                () => {
+                    console.log("KEYBINDER ACTIVATED - by Toggle Switch (T)")
+                    toggle.checked = !toggle.checked;
+                }
+            )
+        }
+        if (enabled_s) {
+        keybinder.bindSpeakerKey(
+            () => {
+                console.log("KEYBINDER ACTIVATED - by Toggle Switch (S)")
+                toggle.checked = false;
+            }
+        )
+        }
+        if (enabled_h) {
+            keybinder.bindHeadphoneKey(
+                () => {
+                    console.log("KEYBINDER ACTIVATED - by Toggle Switch (H)")
+                    toggle.checked = true;
+                }
+            );
+        }
+    }
+
+    _toggleState(toggle,state=null) {
+        console.log(`KEYBINDER ACTIVATED - ${state}`)
+        toggle.checked = state === null ? !toggle.checked : state ;
+    }
+
+    
     destroyKeybinding() {
         this._keybinder.destroy();
         this._keybinder = null;
