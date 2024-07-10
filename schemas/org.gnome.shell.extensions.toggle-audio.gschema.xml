@@ -43,5 +43,21 @@
             <default><![CDATA[['<Ctrl><Super>H']]]></default>
             <summary>Hotkey to open the cool stuff.</summary>
     </key>
+
+    <key name="enable-toggle-headphone-key" type="b">
+      <default>false</default>
+      <summary>'True: hotkey is enabled'</summary>
+      <description>Whether the hotkey is activated and usable or not</description>
+    </key>
+    <key name="enable-select-speaker-key" type="b">
+      <default>false</default>
+      <summary>'True: hotkey is enabled'</summary>
+      <description>Whether the hotkey is activated and usable or not</description>
+    </key>
+    <key name="enable-select-headphone-key" type="b">
+      <default>false</default>
+      <summary>'True: hotkey is enabled'</summary>
+      <description>Whether the hotkey is activated and usable or not</description>
+    </key>
   </schema>
 </schemalist>
