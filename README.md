@@ -39,7 +39,7 @@ You can `enable` those in the settings:
 >
 >the path is: /org/gnome/shell/extensions/toggle-audio/
 >
->Follow the instructions [on the wiki](https://github.com/Blackstareye/toggleAudio-blackeyeprojects.de/wiki/Changing-hotkeys:)
+>Follow the instructions [on the wiki](https://github.com/Blackstareye/toggleAudio-blackeyeprojects.de/wiki/Changing-hotkeys)
 
 
 ## Tested on
