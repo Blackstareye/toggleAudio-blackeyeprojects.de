@@ -118,7 +118,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         settings.connect("changed::enable-toggle-headphone-key", (_,k) => {
             let v = settings.get_boolean(k);
             if(v) {
-                console.log("Changed toggle event")
                 keybinder.bindToggleKey(() => this._toggleState(toggle,null));
             } else {
                 keybinder.unbindToggleKey();
@@ -127,7 +126,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         settings.connect("changed::enable-select-speaker-key", (_,k) => {
             let v = settings.get_boolean(k);
             if(v) {
-                console.log("Selected Speaker event")
                 keybinder.bindSpeakerKey(() => this._toggleState(toggle,false));
             } else {
                 keybinder.unbindSpeakerKey();
@@ -136,7 +134,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         settings.connect("changed::enable-select-headphone-key", (_,k) => {
             let v = settings.get_boolean(k);
             if(v) {
-                console.log("Selected Headphone")
                 keybinder.bindHeadphoneKey(() => this._toggleState(toggle,true));
             } else {
                 keybinder.unbindHeadphoneKey();
@@ -150,7 +147,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         if (enabled_t) {
             keybinder.bindToggleKey(
                 () => {
-                    console.log("KEYBINDER ACTIVATED - by Toggle Switch (T)")
                     toggle.checked = !toggle.checked;
                 }
             )
@@ -158,7 +154,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         if (enabled_s) {
         keybinder.bindSpeakerKey(
             () => {
-                console.log("KEYBINDER ACTIVATED - by Toggle Switch (S)")
                 toggle.checked = false;
             }
         )
@@ -166,7 +161,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         if (enabled_h) {
             keybinder.bindHeadphoneKey(
                 () => {
-                    console.log("KEYBINDER ACTIVATED - by Toggle Switch (H)")
                     toggle.checked = true;
                 }
             );
@@ -174,7 +168,7 @@ class AudioOutputToggleIndicator extends SystemIndicator {
     }
 
     _toggleState(toggle,state=null) {
-        console.log(`KEYBINDER ACTIVATED - ${state}`)
+        console.debug(`KEYBINDER ACTIVATED - ${state}`)
         toggle.checked = state === null ? !toggle.checked : state ;
     }
 
