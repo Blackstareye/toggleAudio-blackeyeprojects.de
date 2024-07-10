@@ -30,5 +30,34 @@
       <default>[]</default>
       <description>A dictionary of (runtime_id; description, name) output devices</description>
     </key>
+
+    <key name="toggle-headphone-key" type="as">
+            <default><![CDATA[['<Ctrl><Super>T']]]></default>
+            <summary>Hotkey to open the cool stuff.</summary>
+    </key>
+    <key name="select-speaker-key" type="as">
+            <default><![CDATA[['<Ctrl><Super>S']]]></default>
+            <summary>Hotkey to open the cool stuff.</summary>
+    </key>
+    <key name="select-headphone-key" type="as">
+            <default><![CDATA[['<Ctrl><Super>H']]]></default>
+            <summary>Hotkey to open the cool stuff.</summary>
+    </key>
+
+    <key name="enable-toggle-headphone-key" type="b">
+      <default>false</default>
+      <summary>'True: hotkey is enabled'</summary>
+      <description>Whether the hotkey is activated and usable or not</description>
+    </key>
+    <key name="enable-select-speaker-key" type="b">
+      <default>false</default>
+      <summary>'True: hotkey is enabled'</summary>
+      <description>Whether the hotkey is activated and usable or not</description>
+    </key>
+    <key name="enable-select-headphone-key" type="b">
+      <default>false</default>
+      <summary>'True: hotkey is enabled'</summary>
+      <description>Whether the hotkey is activated and usable or not</description>
+    </key>
   </schema>
 </schemalist>

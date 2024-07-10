@@ -25,6 +25,7 @@ import {DEBUG} from './lib/util/Constants.js';
 import {Extension, gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
 import {QuickSettingsItem, QuickToggle, SystemIndicator} from 'resource:///org/gnome/shell/ui/quickSettings.js';
 import MixerControlFacade from './lib/MixerControlFacade.js';
+import Keybinder from './lib/util/Keybinder.js';
 
 
 
@@ -67,15 +68,27 @@ const DebugButton = GObject.registerClass(
  * 
  * this is the place where the ui widgets will be added
  */
+//IMPROVEMENT: use settingsprovider here too
 const AudioOutputToggleIndicator = GObject.registerClass(
 class AudioOutputToggleIndicator extends SystemIndicator {
+    _keybinder = null;
+
     constructor(mixerControlFacade, settings) {
         super();
 
         this._indicator = this._addIndicator();
+        //TODO: refactor this to used icon
         this._indicator.iconName = 'audio-headphones';
         this._indicator.visible = settings.get_boolean("show-indicator");
+        
+        
         const toggle = new AudioOutputToggle();
+        this._keybinder = new Keybinder(settings);
+        
+        this.initKeybindingStateCheck(settings, toggle, this._keybinder);
+        this.addKeybindingOnChangeEvents(settings,toggle, this._keybinder);
+
+
         settings.bind('headphone-on', toggle, 'checked', Gio.SettingsBindFlags.DEFAULT);
         settings.connect("changed::headphone-on", (_,k) => {
             let v = settings.get_boolean(k);
@@ -100,6 +113,72 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         }
     }
 
+    addKeybindingOnChangeEvents(settings, toggle, keybinder) {
+       
+        settings.connect("changed::enable-toggle-headphone-key", (_,k) => {
+            let v = settings.get_boolean(k);
+            if(v) {
+                keybinder.bindToggleKey(() => this._toggleState(toggle,null));
+            } else {
+                keybinder.unbindToggleKey();
+            }
+        });
+        settings.connect("changed::enable-select-speaker-key", (_,k) => {
+            let v = settings.get_boolean(k);
+            if(v) {
+                keybinder.bindSpeakerKey(() => this._toggleState(toggle,false));
+            } else {
+                keybinder.unbindSpeakerKey();
+            }
+        });
+        settings.connect("changed::enable-select-headphone-key", (_,k) => {
+            let v = settings.get_boolean(k);
+            if(v) {
+                keybinder.bindHeadphoneKey(() => this._toggleState(toggle,true));
+            } else {
+                keybinder.unbindHeadphoneKey();
+            }
+        });
+    }
+    initKeybindingStateCheck(settings, toggle, keybinder) {
+        let enabled_t = settings.get_boolean("enable-toggle-headphone-key");
+        let enabled_s = settings.get_boolean("enable-select-speaker-key");
+        let enabled_h =settings.get_boolean("enable-select-headphone-key");
+        if (enabled_t) {
+            keybinder.bindToggleKey(
+                () => {
+                    toggle.checked = !toggle.checked;
+                }
+            )
+        }
+        if (enabled_s) {
+        keybinder.bindSpeakerKey(
+            () => {
+                toggle.checked = false;
+            }
+        )
+        }
+        if (enabled_h) {
+            keybinder.bindHeadphoneKey(
+                () => {
+                    toggle.checked = true;
+                }
+            );
+        }
+    }
+
+    _toggleState(toggle,state=null) {
+        console.debug(`KEYBINDER ACTIVATED - ${state}`)
+        toggle.checked = state === null ? !toggle.checked : state ;
+    }
+
+    
+    destroy() {
+        this._keybinder.destroy();
+        this._keybinder = null;
+        super.destroy();
+    }
+
 });
 
 /**
@@ -109,10 +188,12 @@ export default class ToggleAudioExtension extends Extension {
 
     _mixerControlFacade = null;
     _settingsInstance = null;
+    
     enable() {
         this._settingsInstance = this.getSettings();
         this._mixerControlFacade = new MixerControlFacade(this.metadata.name, this._settingsInstance);
         this._indicator = new AudioOutputToggleIndicator(this._mixerControlFacade, this._settingsInstance);
+        
         Main.panel.statusArea.quickSettings.addExternalIndicator(this._indicator);
     }
 
@@ -127,6 +208,7 @@ export default class ToggleAudioExtension extends Extension {
         this._settingsInstance = null;
         this._indicator.quickSettingsItems.forEach(item => item.destroy());
         this._indicator.quickSettingsItems = null;
+
         this._indicator.destroy();
         this._indicator = null;
     }
