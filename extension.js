@@ -209,7 +209,6 @@ export default class ToggleAudioExtension extends Extension {
         this._indicator.quickSettingsItems.forEach(item => item.destroy());
         this._indicator.quickSettingsItems = null;
 
-        this._indicator.destroyKeybinding();
         this._indicator.destroy();
         this._indicator = null;
     }
