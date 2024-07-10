@@ -54,9 +54,6 @@ with 2 audio devices:
 
 ## Next Version
 
-Test on laptop, vm
-pack it and add it to extension gnome
-
 Ideas:
 
 * Disable Toggle Button as long Connection is not possible instead just queuing  
