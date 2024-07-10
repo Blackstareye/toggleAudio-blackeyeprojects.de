@@ -35,8 +35,10 @@ You can `enable` those in the settings:
 ![settings show hotkey area](img/settings_2.png)
 
 >[!info] 
-> if you want to change the hotkeys, you need to do those in gsetings using `dconf`
-> the path is: 
+> if you want to change the hotkeys, you need to do those in gsettings using `gsettings`
+> the path is: /org/gnome/shell/extensions/toggle-audio/
+> Follow the instructions [on the wiki](https://github.com/Blackstareye/toggleAudio-blackeyeprojects.de/wiki/Changing-hotkeys:)
+
 
 ## Tested on
 
