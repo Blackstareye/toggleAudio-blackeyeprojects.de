@@ -1,16 +1,16 @@
 # ToggleAudio Extension
 
-![alt text](img/thumbnail.png)
+![thumbnail](img/thumbnail.png)
 
 Settings
 
-![alt text](img/settings.png)
+![shows settings](img/settings.png)
 
 set your `headphone` and `speaker` devices in preferences
 
 then you can switch between those `devices` with a click of a button:
 
-![alt text](img/speaker.png) ![alt text](img/headphone.png)
+![speaker](img/speaker.png) ![headphone](img/headphone.png)
 
 (you can see the switch between the audio sources in the volume output device window above called `Tonausgang` here)
 
