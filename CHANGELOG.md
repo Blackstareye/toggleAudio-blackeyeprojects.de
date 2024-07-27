@@ -14,3 +14,7 @@
 
 You can change that using `dconf-editor`
 
+## Version 1.2
+
+ * added toggles for whether monochrome / symbolic or colorful icons   for systemtray and quick setting should be used
+ * Bugfix: icon is now on startup correct

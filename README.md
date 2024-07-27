@@ -21,6 +21,8 @@ then you can switch between those `devices` with a click of a button:
  With the `Show Indicator` switch you can also control if you want to show a system icon tray or not.
  If `true` the icon is shown.
 
+## Hotkeys
+
  You can also use `hotkeys` for:
 
 * toggle Speaker/ Headphone
@@ -41,6 +43,13 @@ You can `enable` those in the settings:
 >
 >Follow the instructions [on the wiki](https://github.com/Blackstareye/toggleAudio-blackeyeprojects.de/wiki/Changing-hotkeys)
 
+## Icon Style
+
+You can **control** whether you want to use colorful or symbolic monochrome icons.
+
+![styling](img/styling.png)
+
+PS: You can even [customize](https://github.com/Blackstareye/toggleAudio-blackeyeprojects.de/wiki/Styling-and-Customization) the used icons if you want
 
 ## Tested on
 
