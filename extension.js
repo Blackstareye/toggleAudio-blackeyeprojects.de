@@ -26,6 +26,7 @@ import {Extension, gettext as _} from 'resource:///org/gnome/shell/extensions/ex
 import {QuickSettingsItem, QuickToggle, SystemIndicator} from 'resource:///org/gnome/shell/ui/quickSettings.js';
 import MixerControlFacade from './lib/MixerControlFacade.js';
 import Keybinder from './lib/util/Keybinder.js';
+import SettingProvider from './lib/SettingProvider.js';
 
 
 
@@ -34,10 +35,10 @@ import Keybinder from './lib/util/Keybinder.js';
  */
 const AudioOutputToggle = GObject.registerClass(
 class AudioOutputToggle extends QuickToggle {
-    constructor() {
+    constructor(icon) {
         super({
             title: _('Switch Headphone'),
-            iconName: 'audio-headphones',
+            iconName: icon,
             toggleMode: true,
         });
     }
@@ -68,37 +69,56 @@ const DebugButton = GObject.registerClass(
  * 
  * this is the place where the ui widgets will be added
  */
-//IMPROVEMENT: use settingsprovider here too
 const AudioOutputToggleIndicator = GObject.registerClass(
 class AudioOutputToggleIndicator extends SystemIndicator {
     _keybinder = null;
+    _toggle = null;
 
     constructor(mixerControlFacade, settings) {
         super();
 
+        let provider = new SettingProvider(settings);
+        let icon = provider.getSystemTrayIcon();
         this._indicator = this._addIndicator();
-        //TODO: refactor this to used icon
-        this._indicator.iconName = 'audio-headphones';
+        this._indicator.iconName = icon;
         this._indicator.visible = settings.get_boolean("show-indicator");
         
         
-        const toggle = new AudioOutputToggle();
+        this._toggle = new AudioOutputToggle(provider.getQuickSettingIcon());
+        provider.onSettingIconChanged( () => {
+            let provider = new SettingProvider(settings);
+            this._toggle.iconName = provider.getQuickSettingIcon();
+        }
+        );
+
         this._keybinder = new Keybinder(settings);
         
-        this.initKeybindingStateCheck(settings, toggle, this._keybinder);
-        this.addKeybindingOnChangeEvents(settings,toggle, this._keybinder);
-
-
-        settings.bind('headphone-on', toggle, 'checked', Gio.SettingsBindFlags.DEFAULT);
+        this.initKeybindingStateCheck(settings, this._toggle, this._keybinder);
+        this.addKeybindingOnChangeEvents(settings,this._toggle, this._keybinder);
+        
+        //TODO either use provider or direct contacts - right now it's a mix in this file
+        settings.bind('headphone-on', this._toggle, 'checked', Gio.SettingsBindFlags.DEFAULT);
+        
+        provider.onSystemTrayIconChanged( (_,k) => {
+            let provider = new SettingProvider(settings);
+            this._indicator.iconName = provider.getSystemTrayIcon();
+        });
+        
+        // todo in future: can be refactored after testing
         settings.connect("changed::headphone-on", (_,k) => {
+            let provider = new SettingProvider(settings);
             let v = settings.get_boolean(k);
+            let use_monochrome = provider.getUseMonochromeIconOnSystemtray();
             if(v) {
                 // toggle to headphone
-                this._indicator.iconName = 'audio-headphones';
+                this._indicator.iconName = provider.getHeadphoneIcon(use_monochrome);
             } else {
-                this._indicator.iconName = 'audio-card-symbolic';
+                this._indicator.iconName = provider.getSpeakerIcon(use_monochrome);
             }
         });
+
+        // connect system-tray to toggle change
+
 
         //show icon if toggle in pref is true
         settings.connect("changed::show-indicator", (_,k) => {
@@ -106,11 +126,13 @@ class AudioOutputToggleIndicator extends SystemIndicator {
             this._indicator.visible = v;
         });
         
-        this.quickSettingsItems.push(toggle);
+        this.quickSettingsItems.push(this._toggle);
         // for debug purpose, there is an print output button 
         if (DEBUG) {
             this.quickSettingsItems.push(new DebugButton(mixerControlFacade));
         }
+
+        provider = null;
     }
 
     addKeybindingOnChangeEvents(settings, toggle, keybinder) {

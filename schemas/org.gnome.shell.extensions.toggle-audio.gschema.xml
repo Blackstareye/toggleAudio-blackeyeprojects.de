@@ -11,6 +11,16 @@
       <summary>'True: show the icon.'</summary>
       <description>Visibility  flag for the system indicator icon</description>
     </key>
+    <key name="toggle-use-monochrome-system-tray-icon" type="b">
+      <default>false</default>
+      <summary>'True: use monochrome'</summary>
+      <description>''</description>
+    </key>
+    <key name="toggle-use-monochrome-setting-icon" type="b">
+      <default>true</default>
+      <summary>'True: use monochrome'</summary>
+      <description>''</description>
+    </key>
     <key name="mixercontrol-is-ready-for-action" type="b">
       <default>false</default>
       <summary>''</summary>
@@ -58,6 +68,28 @@
       <default>false</default>
       <summary>'True: hotkey is enabled'</summary>
       <description>Whether the hotkey is activated and usable or not</description>
+    </key>
+    <!-- Icons -->
+    <key name="speaker-icon-symbolic" type="s">
+      <default>'audio-card-symbolic'</default>
+      <summary>''</summary>
+      <description>''</description>
+    </key>
+    <key name="speaker-icon" type="s">
+      <!-- There is no colorful audio card -->
+      <default>'audio-card-symbolic'</default>
+      <summary>''</summary>
+      <description>''</description>
+    </key>
+    <key name="headphone-icon-symbolic" type="s">
+      <default>'audio-headphones-symbolic'</default>
+      <summary>''</summary>
+      <description>''</description>
+    </key>
+    <key name="headphone-icon" type="s">
+      <default>'audio-headphones'</default>
+      <summary>''</summary>
+      <description>''</description>
     </key>
   </schema>
 </schemalist>
