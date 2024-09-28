@@ -36,7 +36,7 @@ You can `enable` those in the settings:
 
 ![settings show hotkey area](img/settings_2.png)
 
->[!NOTE] 
+>[!NOTE]
 > if you want to change the hotkeys, you need to do those in gsettings using `gsettings`
 >
 >the path is: /org/gnome/shell/extensions/toggle-audio/
@@ -68,6 +68,12 @@ with 2 audio devices:
 Ideas:
 
 * Disable Toggle Button as long Connection is not possible instead just queuing  
+
+## Now with multi-lang-support
+
+Contribution of translations files are appreciated.
+
+Please file an issue or PR for that.
 
 ## Thanks and credit to
 
