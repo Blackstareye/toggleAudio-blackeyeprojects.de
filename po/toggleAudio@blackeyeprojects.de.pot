@@ -50,7 +50,7 @@ msgid "Customized Icons"
 msgstr ""
 
 #: lib/AudioDevicePreferences.js:139
-msgid "Shotcuts"
+msgid "Shortcuts"
 msgstr ""
 
 #: lib/AudioDevicePreferences.js:145

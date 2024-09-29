@@ -60,7 +60,7 @@ msgstr ""
 "im <a href='%s'>Wiki</a>"
 
 #: lib/AudioDevicePreferences.js:139 lib/PrefAppStyling.js:111
-msgid "Shotcuts"
+msgid "Shortcuts"
 msgstr "Tastenkombinationen"
 
 #: lib/AudioDevicePreferences.js:140

@@ -55,7 +55,7 @@ msgid "If you want customized icons, you can follow this <a href='%s'>wiki</a>"
 msgstr "Ha saját ikonokat szeretnél használni, kövesd ezt a <a href='%s'>wiki</a>-t"
 
 #: lib/AudioDevicePreferences.js:139 lib/PrefAppStyling.js:111
-msgid "Shotcuts"
+msgid "Shortcuts"
 msgstr "Gyorsbillentyűk"
 
 #: lib/AudioDevicePreferences.js:140
