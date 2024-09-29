@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: last translator\n"
 "POT-Creation-Date: 2024-09-29 16:00+0200\n"
-"PO-Revision-Date: 2024-09-29 16:00+0200\n"
+"PO-Revision-Date: 2024-09-29 17:05+0200\n"
 "Last-Translator: goat865 2155203+goat865@users.noreply.github.com\n"
 "Language-Team: \n"
 "Language: HU\n"
@@ -31,19 +31,19 @@ msgstr "Ikon Stílusa - monokróm ikonok használata"
 
 #: lib/AudioDevicePreferences.js:112
 msgid " Whether you want colorful or symbolic monochrome icons"
-msgstr "Színes vagy monokróm ikonokat szeretnél-e"
+msgstr "Színes vagy monokróm ikonok használata"
 
 #: lib/AudioDevicePreferences.js:117
 msgid "Systemtray Icon"
-msgstr "Eszköz ikonja"
+msgstr "Eszköz Ikonja"
 
 #: lib/AudioDevicePreferences.js:118 lib/AudioDevicePreferences.js:122
 msgid "toggle on: use symbolic icon"
-msgstr "bekapcsolva: monokróm ikon használata"
+msgstr "Bekapcsolt állapotban monokróm ikon használata"
 
 #: lib/AudioDevicePreferences.js:121
 msgid "(Quick) Setting Menu"
-msgstr "(Gyors) Beállítási Menü"
+msgstr "(Gyors) Beállítások Menü"
 
 #: lib/AudioDevicePreferences.js:129
 msgid "Customized Icons"
