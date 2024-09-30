@@ -75,6 +75,12 @@ Contribution of translations files are appreciated.
 
 Please file an issue or PR for that.
 
+### Already implemented translations
+
+* German 
+* English
+* Hungarian
+
 ## Thanks and credit to
 
 * [audio-selector@harald65.simon.gmail.com](https://github.com/hs65/Gnome-Shell-Extension-Audio-Selector)
