@@ -1,170 +1,151 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Hungarian Translation.
+# Copyright (C) 2024. Blackstareye
+# This file is distributed under the same license as the package it belongs to.
+# goat865 62155203+goat865@users.noreply.github.com, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 23:52+0200\n"
-"PO-Revision-Date: 2024-09-28 00:10+0200\n"
-"Last-Translator: \n"
+"Report-Msgid-Bugs-To: last translator\n"
+"POT-Creation-Date: 2024-09-29 16:00+0200\n"
+"PO-Revision-Date: 2024-09-29 17:05+0200\n"
+"Last-Translator: goat865 2155203+goat865@users.noreply.github.com\n"
 "Language-Team: \n"
-"Language: de\n"
+"Language: HU\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
 
 #: extension.js:40
 msgid "Switch Headphone"
-msgstr "Zum Kopfhörer wechseln"
+msgstr "Fejhallgató"
 
 #: extension.js:58
 msgid "show debug infos"
-msgstr "Debug-Informationen anzeigen"
+msgstr "debug információk megjelenítése"
 
 #: lib/AudioDevicePreferences.js:111
 msgid "Icon Styling - use monochrome symbolic icons"
-msgstr "Symbol Stil - Benutze monochrome Symbole"
+msgstr "Ikon Stílusa - monokróm ikonok használata"
 
 #: lib/AudioDevicePreferences.js:112
 msgid " Whether you want colorful or symbolic monochrome icons"
-msgstr ""
-" Einstellung, um zu steuern ob bunte oder monochrome Symbole verwendet "
-"werden sollen"
+msgstr "Színes vagy monokróm ikonok használata"
 
 #: lib/AudioDevicePreferences.js:117
 msgid "Systemtray Icon"
-msgstr "Anwendungssymbol"
+msgstr "Eszköz Ikonja"
 
 #: lib/AudioDevicePreferences.js:118 lib/AudioDevicePreferences.js:122
 msgid "toggle on: use symbolic icon"
-msgstr "Schalter an (true): benutze monochrome Symbole"
+msgstr "Bekapcsolt állapotban monokróm ikon használata"
 
 #: lib/AudioDevicePreferences.js:121
 msgid "(Quick) Setting Menu"
-msgstr "(Schnell) Einstellungs-Menü"
+msgstr "(Gyors) Beállítások Menü"
 
 #: lib/AudioDevicePreferences.js:129
 msgid "Customized Icons"
-msgstr "Benutzerdefinierte Symbole"
+msgstr "Testreszabható Ikonok"
 
 #: lib/AudioDevicePreferences.js:130
 #, javascript-format
 msgid "If you want customized icons, you can follow this <a href='%s'>wiki</a>"
-msgstr ""
-"Auch andere Symbole können mit Schlüsselwörtern verwendet werden. Mehr dazu "
-"im <a href='%s'>Wiki</a>"
+msgstr "Ha saját ikonokat szeretnél használni, kövesd ezt a <a href='%s'>wiki</a>-t"
 
 #: lib/AudioDevicePreferences.js:139 lib/PrefAppStyling.js:111
 msgid "Shortcuts"
-msgstr "Tastenkombinationen"
+msgstr "Gyorsbillentyűk"
 
 #: lib/AudioDevicePreferences.js:140
 msgid "Control whether shortcuts should be activated or not."
-msgstr "Steuere, ob Tastenkombinationen aktiviert sein sollen oder nicht."
+msgstr "A gyorsbillentyűk ki/bekapcsolása."
 
 #: lib/AudioDevicePreferences.js:141
 msgid ""
 "If true, the audio device can  also be selected / toggled with a hotkey."
-msgstr ""
-"Wenn der Schalter aktiviert ist,  kann die Gerätesteuerung ebenso mit einer "
-"Tastenkombination erfolgen."
+msgstr "Bekapcsolt állapotban az eszközöket gyorsbillentyűkkel is át tudod állítani."
 
 #: lib/AudioDevicePreferences.js:142
 #, javascript-format
 msgid "Hotkeys can be changed via <a href='%s'>dconf-editor.</a>"
-msgstr ""
-"Tastenkombinationen können via  <a href='%s'>dconf-editor.</a> konfiguriert "
-"werden"
+msgstr "A gyorsbillentyűket a <a href='%s'>dconf-editor</a> segítségével tudod módosítani."
 
 #: lib/AudioDevicePreferences.js:147 lib/PrefAppStyling.js:117
 msgid "Toggle Headphone / Speaker hotkey"
-msgstr "Tastenkombinationen \"zwischen Kopfhörer / Lautsprecher wechseln\""
+msgstr "Fejhallgató / Hangszóró váltása"
 
 #: lib/AudioDevicePreferences.js:148 lib/PrefAppStyling.js:118
 msgid "Default Hotkey: Ctrl+Super+T"
-msgstr "Standard Tastenkombination: Strg+Super+T"
+msgstr "Alapértelmezett gyorsbillentyű: Ctrl+Super+T"
 
 #: lib/AudioDevicePreferences.js:151 lib/PrefAppStyling.js:121
 msgid "Select speaker hotkey"
-msgstr "Tastenkombinationen \"zu Lautsprecher wechseln\""
+msgstr "Váltás hangszóróra"
 
 #: lib/AudioDevicePreferences.js:152 lib/PrefAppStyling.js:122
 msgid "Default Hotkey: Ctrl+Super+S"
-msgstr "Standard Tastenkombination: Strg+Super+S"
+msgstr "Alapértelmezett gyorsbillentyű: Ctrl+Super+S"
 
 #: lib/AudioDevicePreferences.js:155 lib/PrefAppStyling.js:125
 msgid "Select headphone hotkey"
-msgstr "Tastenkombinationen \"zu Kopfhörer wechseln\""
+msgstr "Váltás fejhallgatóra"
 
 #: lib/AudioDevicePreferences.js:156 lib/PrefAppStyling.js:126
 msgid "Default Hotkey: Ctrl+Super+H"
-msgstr "Standard Tastenkombination: Strg+Super+H"
+msgstr "Alapértelmezett gyorsbillentyű: Ctrl+Super+H"
 
 #: lib/AudioDevicePreferences.js:170 lib/PrefAppStyling.js:139
 msgid "Output Devices"
-msgstr "Ausgabegerät"
+msgstr "Kimeneti Eszközök"
 
 #: lib/AudioDevicePreferences.js:171 lib/PrefAppStyling.js:140
 msgid "Select your Speaker and Headphone Device"
-msgstr "Bitte wähle Lautsprecher- und Kopfhörer-Gerät aus"
+msgstr "Válaszd ki a hangszórót és a fejhallgatót"
 
 #: lib/AudioDevicePreferences.js:185 lib/PrefAppStyling.js:154
 msgid "Show System Indicator Icon"
-msgstr "Symbol für Anwendung anzeigen"
+msgstr "Eszköz ikonjának megjelenítése"
 
 #: lib/AudioDevicePreferences.js:186 lib/PrefAppStyling.js:155
 msgid "Whether to show the system indicator (e.g. the headphone) or not."
-msgstr ""
-"Steuert, ob ein Anwendungssymbol im Systemtray (z.B. ein Kopfhörer-Symbol) "
-"angezeigt wird oder nicht."
+msgstr "Megjelenjen-e a felső panelben a kiválasztott eszköz (pl. a fejhallgató) ikonja, vagy sem."
 
 #: lib/AudioDevicePreferences.js:194 lib/PrefAppStyling.js:163
 msgid "Speaker"
-msgstr "Lautsprecher"
+msgstr "Hangszóró"
 
 #: lib/AudioDevicePreferences.js:201 lib/PrefAppStyling.js:170
 msgid "Headphone"
-msgstr "Kopfhörer"
+msgstr "Fejhallgató"
 
 #: lib/AudioDevicePreferences.js:225
 msgid "General-Preferences"
-msgstr "Allgemeine Einstellungen"
+msgstr "Általános Beállítások"
 
 #: lib/AudioDevicePreferences.js:227
 msgid ""
 "If the toggle button is true (indicator icon is a headphone), the selected "
 "'Headphone' device will be used as default audio output device. Otherwise "
 "the 'Speaker' device will be used."
-msgstr ""
-"Wenn der Schalter auf true steht (Anzeigesymbol ist ein Kopfhörer), wird das "
-"ausgewählte \"Kopfhörer\"-Gerät als das Standardausgabegerät verwendet. "
-"Sonst wird das ausgewählte \"Lautsprecher\"-Gerät für die "
-"Standardausgabegerät genutzt."
+msgstr "Bekapcsolt állapotban a kiválasztott 'Fejhallgató' eszköz lesz az alapértelmezett kimeneti eszköz. Ellenkező esetben a 'Hangszóró' eszköz lesz használva."
 
 #: lib/AudioDevicePreferences.js:236
 msgid "Styling"
-msgstr "Design"
+msgstr "Testreszabás"
 
 #: lib/AudioDevicePreferences.js:238
 msgid "Customize your experience"
-msgstr "Passe dein Benutzererlebnis an"
+msgstr "Megjelenés testreszabása"
 
 #: lib/PrefAppStyling.js:112
 msgid ""
 "Control whether shortcuts should be activated or not.\n"
 "If true, the audio device can  also be selected / toggled with a hotkey.\n"
 "Hotkeys can be changed via dconf-editor."
-msgstr ""
-"Steuere, ob Tastenkombinationen aktiviert sein sollen oder nicht.\n"
-"Wenn der Schalter aktiviert ist,  kann die Gerätesteuerung ebenso mit einer "
-"Tastenkombination erfolgen.\n"
-"Tastenkombinationen können via dconf-editor konfiguriert werden."
+msgstr "A gyorsbillentyűk ki/bekapcsolása.\nBekapcsolt állapotban az eszközöket gyorsbillentyűkkel is át tudod állítani.\nA gyorsbillentyűket a dconf-editor segítségével tudod módosítani."
 
 #: lib/PrefAppStyling.js:194
 msgid "Preferences"
-msgstr "Einstellungen"
+msgstr "Beállítások"
