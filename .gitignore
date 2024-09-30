@@ -5,3 +5,4 @@ helper/
 export/
 !export/.gitkeep
 scripts/createSymlinkForTesting.sh
+*.mo
