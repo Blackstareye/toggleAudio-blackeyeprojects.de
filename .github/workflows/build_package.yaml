@@ -7,7 +7,7 @@ on:
     branches:
       - master
       - version*
-      
+
   pull_request:
     branches-ignore:
       - 'tmp_*'
@@ -23,9 +23,9 @@ permissions:
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
+#concurrency:
 #  group: "pages"
-  cancel-in-progress: false
+#cancel-in-progress: false
 
 # Default to bash
 defaults:
@@ -42,8 +42,10 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      - name: list files
+        run: "ls -la"
       - name: Call Script
-        run: "bash scripts/packExtenstion.sh"
+        run: "bash scripts/packExtension.sh"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
