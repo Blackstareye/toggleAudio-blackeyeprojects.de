@@ -1,0 +1,159 @@
+# Italian translation.
+# Copyright (C) 2025. Blackstareye
+# This file is distributed under the same license as the PACKAGE package.
+# ammacca-banane <26335375+ammacca-banane@users.noreply.github.com>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-05 21:50+0200\n"
+"PO-Revision-Date: 2025-05-05 21:50+0200\n"
+"Last-Translator: ammacca-banane 26335375+ammacca-banane@users.noreply.github.com\n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: extension.js:40
+msgid "Switch Headphone"
+msgstr "Passa a Cuffie"
+
+#: extension.js:58
+msgid "show debug infos"
+msgstr "Mostra info debug"
+
+#: lib/AudioDevicePreferences.js:111
+msgid "Icon Styling - use monochrome symbolic icons"
+msgstr "Stile Icone - Usa icone simboliche monocromatiche"
+
+#: lib/AudioDevicePreferences.js:112
+msgid " Whether you want colorful or symbolic monochrome icons"
+msgstr "Scegli se desideri avere delle icone colorate o simboliche monocromatiche"
+
+#: lib/AudioDevicePreferences.js:117
+msgid "Systemtray Icon"
+msgstr "Icona barra di sistema"
+
+#: lib/AudioDevicePreferences.js:118 lib/AudioDevicePreferences.js:122
+msgid "toggle on: use symbolic icon"
+msgstr "Selettore attivo: usa icona simbolica"
+
+#: lib/AudioDevicePreferences.js:121
+msgid "(Quick) Setting Menu"
+msgstr "Pannello Impostazioni Rapide"
+
+#: lib/AudioDevicePreferences.js:129
+msgid "Customized Icons"
+msgstr "Icone Personalizzate"
+
+#: lib/AudioDevicePreferences.js:130
+#, javascript-format
+msgid "If you want customized icons, you can follow this <a href='%s'>wiki</a>"
+msgstr "Se desideri utilizzare delle icone personalizzate, puoi seguire questa <a href='%s'>wiki</a>."
+
+#: lib/AudioDevicePreferences.js:139 lib/PrefAppStyling.js:111
+msgid "Shortcuts"
+msgstr "Scorciatoie"
+
+#: lib/AudioDevicePreferences.js:140
+msgid "Control whether shortcuts should be activated or not."
+msgstr "Determina se le scorciatoie siano attive o meno."
+
+#: lib/AudioDevicePreferences.js:141
+msgid ""
+"If true, the audio device can  also be selected / toggled with a hotkey."
+msgstr ""
+"Se abilitato, il dispositivo audio può anche essere scelto con una scorciatoia."
+
+#: lib/AudioDevicePreferences.js:142
+#, javascript-format
+msgid "Hotkeys can be changed via <a href='%s'>dconf-editor.</a>"
+msgstr "Le scorciatorie possono essere cambiate attraverso il <a href='%s'>dconf-editor</a>."
+
+#: lib/AudioDevicePreferences.js:147 lib/PrefAppStyling.js:117
+msgid "Toggle Headphone / Speaker hotkey"
+msgstr "Seleziona scorciatoia Cuffie / Altoparlanti"
+
+#: lib/AudioDevicePreferences.js:148 lib/PrefAppStyling.js:118
+msgid "Default Hotkey: Ctrl+Super+T"
+msgstr "Scorciatoia predefinita: Ctrl+Super+T"
+
+#: lib/AudioDevicePreferences.js:151 lib/PrefAppStyling.js:121
+msgid "Select speaker hotkey"
+msgstr "Seleziona scorciatoia Altoparlanti"
+
+#: lib/AudioDevicePreferences.js:152 lib/PrefAppStyling.js:122
+msgid "Default Hotkey: Ctrl+Super+S"
+msgstr "Scorciatoia predefinita: Ctrl+Super+S"
+
+#: lib/AudioDevicePreferences.js:155 lib/PrefAppStyling.js:125
+msgid "Select headphone hotkey"
+msgstr "Seleziona scorciatoia Cuffie"
+
+#: lib/AudioDevicePreferences.js:156 lib/PrefAppStyling.js:126
+msgid "Default Hotkey: Ctrl+Super+H"
+msgstr "Scorciatoia predefinita: Ctrl+Super+H"
+
+#: lib/AudioDevicePreferences.js:170 lib/PrefAppStyling.js:139
+msgid "Output Devices"
+msgstr "Dispositivi in uscita"
+
+#: lib/AudioDevicePreferences.js:171 lib/PrefAppStyling.js:140
+msgid "Select your Speaker and Headphone Device"
+msgstr "Seleziona i dispositivi Altoparlanti e Cuffie"
+
+#: lib/AudioDevicePreferences.js:185 lib/PrefAppStyling.js:154
+msgid "Show System Indicator Icon"
+msgstr "Mostra Icona Indicatore di Sistema"
+
+#: lib/AudioDevicePreferences.js:186 lib/PrefAppStyling.js:155
+msgid "Whether to show the system indicator (e.g. the headphone) or not."
+msgstr "Determina se mostrare un indicatore di sistema (es. le cuffie) o meno."
+
+#: lib/AudioDevicePreferences.js:194 lib/PrefAppStyling.js:163
+msgid "Speaker"
+msgstr "Altoparlanti"
+
+#: lib/AudioDevicePreferences.js:201 lib/PrefAppStyling.js:170
+msgid "Headphone"
+msgstr "Cuffie"
+
+#: lib/AudioDevicePreferences.js:225
+msgid "General-Preferences"
+msgstr "Preferenze Generali"
+
+#: lib/AudioDevicePreferences.js:227
+msgid ""
+"If the toggle button is true (indicator icon is a headphone), the selected "
+"'Headphone' device will be used as default audio output device. Otherwise "
+"the 'Speaker' device will be used."
+msgstr ""
+"Se il pulsante è abilitato (l'icona indicatore sono delle cuffie), il "
+"dispositivo 'Cuffie' sarà utilizzato come dispositivo di uscita audio "
+"predefinito. Altrimenti, verrà utilizzato il dispositivo 'Altoparlanti'."
+
+#: lib/AudioDevicePreferences.js:236
+msgid "Styling"
+msgstr "Stile"
+
+#: lib/AudioDevicePreferences.js:238
+msgid "Customize your experience"
+msgstr "Personalizza la tua esperienza"
+
+#: lib/PrefAppStyling.js:112
+msgid ""
+"Control whether shortcuts should be activated or not.\n"
+"If true, the audio device can  also be selected / toggled with a hotkey.\n"
+"Hotkeys can be changed via dconf-editor."
+msgstr ""
+"Determina se le scorciatoie devono essere abilitate o meno.\n"
+"Se abilitate, il dispositivo di uscita audio può essere selezionato "
+"anche con una scorciatoia.\n"
+"Le scorciatoie possono essere cambiate attraverso il dconf-editor."
+
+#: lib/PrefAppStyling.js:194
+msgid "Preferences"
+msgstr "Preferenze"
