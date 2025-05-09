@@ -4,7 +4,7 @@
   "uuid": "toggleAudio@blackeyeprojects.de",
   "url": "https://github.com/Blackstareye/toggleAudio-blackeyeprojects.de",
   "shell-version": [
-    "45", "46","47"
+    "45", "46","47", "48"
   ],
   "settings-schema": "org.gnome.shell.extensions.toggle-audio",
   "gettext-domain": "toggleAudio@blackeyeprojects.de",
