@@ -80,9 +80,10 @@ Please file an issue or PR for that.
 
 ### Already implemented translations
 
-* German 
 * English
+* German 
 * Hungarian
+* Italian
 
 ## Thanks and credit to
 
