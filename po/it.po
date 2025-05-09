@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-05 21:50+0200\n"
-"PO-Revision-Date: 2025-05-05 21:50+0200\n"
+"PO-Revision-Date: 2025-05-09 23:10+0200\n"
 "Last-Translator: ammacca-banane 26335375+ammacca-banane@users.noreply.github.com\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -71,11 +71,11 @@ msgstr ""
 #: lib/AudioDevicePreferences.js:142
 #, javascript-format
 msgid "Hotkeys can be changed via <a href='%s'>dconf-editor.</a>"
-msgstr "Le scorciatorie possono essere cambiate attraverso il <a href='%s'>dconf-editor</a>."
+msgstr "Le scorciatoie possono essere cambiate attraverso il <a href='%s'>dconf-editor</a>."
 
 #: lib/AudioDevicePreferences.js:147 lib/PrefAppStyling.js:117
 msgid "Toggle Headphone / Speaker hotkey"
-msgstr "Seleziona scorciatoia Cuffie / Altoparlanti"
+msgstr "Scorciatoia 'Passa a Cuffie / Altoparlanti'"
 
 #: lib/AudioDevicePreferences.js:148 lib/PrefAppStyling.js:118
 msgid "Default Hotkey: Ctrl+Super+T"
@@ -83,7 +83,7 @@ msgstr "Scorciatoia predefinita: Ctrl+Super+T"
 
 #: lib/AudioDevicePreferences.js:151 lib/PrefAppStyling.js:121
 msgid "Select speaker hotkey"
-msgstr "Seleziona scorciatoia Altoparlanti"
+msgstr "Scorciatoia 'Seleziona Altoparlanti'"
 
 #: lib/AudioDevicePreferences.js:152 lib/PrefAppStyling.js:122
 msgid "Default Hotkey: Ctrl+Super+S"
@@ -91,7 +91,7 @@ msgstr "Scorciatoia predefinita: Ctrl+Super+S"
 
 #: lib/AudioDevicePreferences.js:155 lib/PrefAppStyling.js:125
 msgid "Select headphone hotkey"
-msgstr "Seleziona scorciatoia Cuffie"
+msgstr "Scorciatoia 'Seleziona Cuffie'"
 
 #: lib/AudioDevicePreferences.js:156 lib/PrefAppStyling.js:126
 msgid "Default Hotkey: Ctrl+Super+H"
@@ -131,7 +131,7 @@ msgid ""
 "'Headphone' device will be used as default audio output device. Otherwise "
 "the 'Speaker' device will be used."
 msgstr ""
-"Se il pulsante è abilitato (l'icona indicatore sono delle cuffie), il "
+"Se il pulsante è abilitato (l'icona indicatore è un paio di cuffie), il "
 "dispositivo 'Cuffie' sarà utilizzato come dispositivo di uscita audio "
 "predefinito. Altrimenti, verrà utilizzato il dispositivo 'Altoparlanti'."
 
