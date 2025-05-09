@@ -55,8 +55,11 @@ PS: You can even [customize](https://github.com/Blackstareye/toggleAudio-blackey
 
 with 2 audio devices:
 
+* Gnome 48;
+  * Fedora 42
 * Gnome 47:
   * EndeavourOS Linux
+  * Nobara
 * Gnome 46:
   * Ubuntu 24.04 (hardware)
 * Gnome 45:
