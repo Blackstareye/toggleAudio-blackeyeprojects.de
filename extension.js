@@ -23,7 +23,8 @@ import Gio from 'gi://Gio';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import {DEBUG} from './lib/util/Constants.js';
 import {Extension, gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
-import {QuickSettingsItem, QuickToggle, SystemIndicator} from 'resource:///org/gnome/shell/ui/quickSettings.js';
+import {QuickSettingsItem, QuickToggle, QuickMenuToggle, SystemIndicator} from 'resource:///org/gnome/shell/ui/quickSettings.js';
+import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
 import MixerControlFacade from './lib/MixerControlFacade.js';
 import Keybinder from './lib/util/Keybinder.js';
 import SettingProvider from './lib/SettingProvider.js';
@@ -35,12 +36,63 @@ import SettingProvider from './lib/SettingProvider.js';
  */
 const AudioOutputToggle = GObject.registerClass(
 class AudioOutputToggle extends QuickToggle {
-    constructor(icon) {
+    constructor(extensionObject, icon) {
         super({
             title: _('Switch Headphone'),
             iconName: icon,
             toggleMode: true,
         });
+    }
+});
+/**
+ * GObject Class for audio switch via toggle
+ */
+const AudioOutputToggleMenu = GObject.registerClass(
+class AudioOutputToggleMenu extends QuickMenuToggle {
+     constructor(extensionObject, icon, provider) {
+        super({
+            title: _('Switch Headphone'),
+            iconName: icon,
+            toggleMode: true,
+            // menuEnabled: false
+        });
+
+        this.menu.setHeader(icon, _('Switch Headphone'),
+            '');
+        // Add a section of items to the menu
+        this._itemsSection = new PopupMenu.PopupMenuSection();
+
+        const popSwitch = new PopupMenu.PopupSwitchMenuItem(_('Switch Remote Headphone'),
+        false, {});
+
+        // this._itemsSection.addAction(_('Menu Item 1'),
+        //     () => console.debug('Menu Item 1 activated!'));
+        // this._itemsSection.addAction(_('Menu Item 2'),
+        //     () => console.debug('Menu Item 2 activated!'));
+
+        this._itemsSection.addMenuItem(popSwitch, 0);
+
+
+        this.menu.addMenuItem(this._itemsSection);
+
+        popSwitch.connect('toggled', (item, state) => {
+            provider.setFlagForUseRemoteHeadphone(state);
+            console.log(`BUTTON TOGGLED -  FLAG SET: ${!state} -> ${state}`)
+        });
+
+        provider.bindEnableRemoteHeadsetMenu(this);
+
+        
+        // // Add an entry-point for more settings
+        // this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
+        // const settingsItem = this.menu.addAction('More Settings',
+        //     () => extensionObject.openPreferences());
+
+        // // Ensure the settings are unavailable when the screen is locked
+        // settingsItem.visible = Main.sessionMode.allowSettings;
+        // this.menu._settingsActions[extensionObject.uuid] = settingsItem;
+
+        
     }
 });
 
@@ -84,7 +136,17 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         this._indicator.visible = settings.get_boolean("show-indicator");
         
         
-        this._toggle = new AudioOutputToggle(provider.getQuickSettingIcon());
+        // TODO check if it is off if not necessary
+        // this._toggle = new AudioOutputToggleMenu(this, provider.getQuickSettingIcon());
+        this._toggle = new AudioOutputToggleMenu(this, provider.getQuickSettingIcon(),provider);
+
+        provider.onRemoteHeadphoneSettingChange( (_,k) => {
+            console.log("CHANGED NOW AUDIOBUTTON TOGGLE CHANGE");
+        });
+
+        
+
+
         provider.onSettingIconChanged( () => {
             let provider = new SettingProvider(settings);
             this._toggle.iconName = provider.getQuickSettingIcon();
@@ -134,6 +196,15 @@ class AudioOutputToggleIndicator extends SystemIndicator {
 
         provider = null;
     }
+
+    // reload(state) {
+    //     let provider = this._provider;
+
+    //     // This is not the way TODO
+    //     this.quickSettingsItems.pop();
+    //     this._toggle = (state) ? new AudioOutputToggleMenu(this, provider.getQuickSettingIcon(),provider) :  new AudioOutputToggleMenu(this, provider.getQuickSettingIcon());
+    //     this.quickSettingsItems.push(this._toggle);
+    // }
 
     addKeybindingOnChangeEvents(settings, toggle, keybinder) {
        

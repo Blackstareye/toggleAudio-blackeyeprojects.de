@@ -101,5 +101,10 @@
       <summary>''</summary>
       <description>''</description>
     </key>
+    <key name="use-remote-headphone-flag" type="b">
+      <default>false</default>
+      <summary>'Whether the switch is between remote headset and speaker or headphone and speaker'</summary>
+      <description>''</description>
+    </key>
   </schema>
 </schemalist>
