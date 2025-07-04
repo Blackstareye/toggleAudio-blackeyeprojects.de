@@ -58,6 +58,10 @@
             <default><![CDATA[['<Ctrl><Super>H']]]></default>
             <summary>Hotkey to open the cool stuff.</summary>
     </key>
+    <key name="toggle-remote-headphone-key" type="as">
+            <default><![CDATA[['<Ctrl><Super>R']]]></default>
+            <summary>Hotkey to open the cool stuff.</summary>
+    </key>
 
     <key name="enable-toggle-headphone-key" type="b">
       <default>false</default>
@@ -75,6 +79,11 @@
       <description>Whether the remote headphone toggler mode is activated and usable or not</description>
     </key>
     <key name="enable-select-headphone-key" type="b">
+      <default>false</default>
+      <summary>'True: hotkey is enabled'</summary>
+      <description>Whether the hotkey is activated and usable or not</description>
+    </key>
+    <key name="enable-toggle-remote-headphone-key" type="b">
       <default>false</default>
       <summary>'True: hotkey is enabled'</summary>
       <description>Whether the hotkey is activated and usable or not</description>

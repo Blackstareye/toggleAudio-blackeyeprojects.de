@@ -65,34 +65,19 @@ class AudioOutputToggleMenu extends QuickMenuToggle {
         const popSwitch = new PopupMenu.PopupSwitchMenuItem(_('Switch Remote Headphone'),
         false, {});
 
-        // this._itemsSection.addAction(_('Menu Item 1'),
-        //     () => console.debug('Menu Item 1 activated!'));
-        // this._itemsSection.addAction(_('Menu Item 2'),
-        //     () => console.debug('Menu Item 2 activated!'));
 
         this._itemsSection.addMenuItem(popSwitch, 0);
 
 
         this.menu.addMenuItem(this._itemsSection);
 
-        popSwitch.connect('toggled', (item, state) => {
-            provider.setFlagForUseRemoteHeadphone(state);
-            console.log(`BUTTON TOGGLED -  FLAG SET: ${!state} -> ${state}`)
-        });
+        //  Trick to bind the flag on the switch
+        provider.bindFlagForUseRemoteHeadphone(popSwitch._switch);
 
+
+        //  Bind the Menu to Enable-Remote-Feature-Button 
         provider.bindEnableRemoteHeadsetMenu(this);
 
-        
-        // // Add an entry-point for more settings
-        // this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-        // const settingsItem = this.menu.addAction('More Settings',
-        //     () => extensionObject.openPreferences());
-
-        // // Ensure the settings are unavailable when the screen is locked
-        // settingsItem.visible = Main.sessionMode.allowSettings;
-        // this.menu._settingsActions[extensionObject.uuid] = settingsItem;
-
-        
     }
 });
 
@@ -136,8 +121,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         this._indicator.visible = settings.get_boolean("show-indicator");
         
         
-        // TODO check if it is off if not necessary
-        // this._toggle = new AudioOutputToggleMenu(this, provider.getQuickSettingIcon());
         this._toggle = new AudioOutputToggleMenu(this, provider.getQuickSettingIcon(),provider);
 
         provider.onRemoteHeadphoneSettingChange( (_,k) => {
@@ -232,11 +215,21 @@ class AudioOutputToggleIndicator extends SystemIndicator {
                 keybinder.unbindHeadphoneKey();
             }
         });
+
+        settings.connect("changed::enable-toggle-remote-headphone-key", (_,k) => {
+            let v = settings.get_boolean(k);
+            if(v) {
+                keybinder.bindToggleRemoteHeadphoneKey(() => this._toggleRemoteHeadphone(settings));
+            } else {
+                keybinder.unbindToggleRemoteHeadphoneKey();
+            }
+        });
     }
     initKeybindingStateCheck(settings, toggle, keybinder) {
         let enabled_t = settings.get_boolean("enable-toggle-headphone-key");
         let enabled_s = settings.get_boolean("enable-select-speaker-key");
         let enabled_h =settings.get_boolean("enable-select-headphone-key");
+        let enabled_r =settings.get_boolean("enable-toggle-remote-headphone-key");
         if (enabled_t) {
             keybinder.bindToggleKey(
                 () => {
@@ -258,6 +251,17 @@ class AudioOutputToggleIndicator extends SystemIndicator {
                 }
             );
         }
+        if (enabled_r) {
+            keybinder.bindToggleRemoteHeadphoneKey(() => this._toggleRemoteHeadphone(settings));
+        }
+    }
+
+    _toggleRemoteHeadphone(settings) {
+        // setFlagForUseRemoteHeadphone(state
+        console.debug(`KEYBINDER ACTIVATED - TOGGLE REMOTE HEADPHONE`);
+        let provider = new SettingProvider(settings);
+        let new_flag = !provider.getFlagForUseRemoteHeadphone();
+        provider.setFlagForUseRemoteHeadphone(new_flag);
     }
 
     _toggleState(toggle,state=null) {
