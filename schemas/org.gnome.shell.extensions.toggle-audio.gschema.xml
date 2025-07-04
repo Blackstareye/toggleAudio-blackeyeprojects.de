@@ -31,6 +31,11 @@
       <summary>''</summary>
       <description>Touple of (runtime_id, description, name)</description>
     </key>
+    <key name="remote-headphone" type="(iss)">
+      <default>(0,'','')</default>
+      <summary>''</summary>
+      <description>Touple of (runtime_id, description, name)</description>
+    </key>
     <key name="speaker" type="(iss)">
       <default>(0,'','')</default>
       <summary>''</summary>
@@ -63,6 +68,11 @@
       <default>false</default>
       <summary>'True: hotkey is enabled'</summary>
       <description>Whether the hotkey is activated and usable or not</description>
+    </key>
+    <key name="enable-toggle-remote-headphone" type="b">
+      <default>true</default>
+      <summary>'True: Remote Headphone Toggler is enabled'</summary>
+      <description>Whether the remote headphone toggler mode is activated and usable or not</description>
     </key>
     <key name="enable-select-headphone-key" type="b">
       <default>false</default>
