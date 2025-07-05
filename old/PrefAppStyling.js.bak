@@ -130,10 +130,7 @@ export default class AudioDevicePreferences {
             title: _('___'),
             subtitle: _('____'),
         });
-        // const activateToggleRemoteHeadphoneHotkey = new Adw.SwitchRow({
-        //     title: _('Toggle Headphone / Remote Headphone hotkey'),
-        //     subtitle: _('Default Hotkey: Ctrl+Super+R'),
-        // });
+
         //  TODO an das RemoteHeadphoneSetting flantschen
 
         toggleHotKeysGroup.add(activateToggleHotkey);

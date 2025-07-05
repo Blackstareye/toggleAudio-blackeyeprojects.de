@@ -21,6 +21,10 @@ then you can switch between those `devices` with a click of a button:
  With the `Show Indicator` switch you can also control if you want to show a system icon tray or not.
  If `true` the icon is shown.
 
+>[!NOTE]
+> NEW: now you can enable a second device e.g. a remote headphone and toggle between headphone and remote headphone too 
+> If you don't like this feature don't enable it and it should behave like before! :>
+
 ## Hotkeys
 
  You can also use `hotkeys` for:
@@ -31,6 +35,8 @@ then you can switch between those `devices` with a click of a button:
   * default: <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>S</kbd>
 * select Headphone
   * default: <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>H</kbd>
+* toggle Headphone / Remote Headphone (or second Headphone)
+  * default: <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>R</kbd>
 
 You can `enable` those in the settings:
 
@@ -57,6 +63,7 @@ with 2 audio devices:
 
 * Gnome 48;
   * Fedora 42
+  * CachyOS
 * Gnome 47:
   * EndeavourOS Linux
   * Nobara

@@ -23,7 +23,7 @@ import Gio from 'gi://Gio';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import {DEBUG} from './lib/util/Constants.js';
 import {Extension, gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
-import {QuickSettingsItem, QuickToggle, QuickMenuToggle, SystemIndicator} from 'resource:///org/gnome/shell/ui/quickSettings.js';
+import {QuickSettingsItem, QuickMenuToggle, SystemIndicator} from 'resource:///org/gnome/shell/ui/quickSettings.js';
 import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
 import MixerControlFacade from './lib/MixerControlFacade.js';
 import Keybinder from './lib/util/Keybinder.js';
@@ -31,19 +31,6 @@ import SettingProvider from './lib/SettingProvider.js';
 
 
 
-/**
- * GObject Class for audio switch via toggle
- */
-const AudioOutputToggle = GObject.registerClass(
-class AudioOutputToggle extends QuickToggle {
-    constructor(extensionObject, icon) {
-        super({
-            title: _('Switch Headphone'),
-            iconName: icon,
-            toggleMode: true,
-        });
-    }
-});
 /**
  * GObject Class for audio switch via toggle
  */
@@ -124,7 +111,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         this._toggle = new AudioOutputToggleMenu(this, provider.getQuickSettingIcon(),provider);
 
         provider.onRemoteHeadphoneSettingChange( (_,k) => {
-            console.log("CHANGED NOW AUDIOBUTTON TOGGLE CHANGE - NOT NEEDED HAHAHHAHAHA 2 - PLUSQAMPEREKT");
             let provider = new SettingProvider(settings);
             let icon = provider.getSystemTrayIcon();
             this._indicator.iconName = icon;
@@ -174,9 +160,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
                 this._indicator.iconName = provider.getCorrectHeadphoneIcon(use_monochrome);
             }
         });
-
-        // connect system-tray to toggle change
-
 
         //show icon if toggle in pref is true
         settings.connect("changed::show-indicator", (_,k) => {
