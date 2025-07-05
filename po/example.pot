@@ -8,144 +8,178 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-28 00:08+0200\n"
+"POT-Creation-Date: 2025-07-05 04:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: extension.js:40
+#: extension.js:41 extension.js:47
 msgid "Switch Headphone"
 msgstr ""
 
-#: extension.js:58
+#: extension.js:52
+msgid "Switch Remote Headphone"
+msgstr ""
+
+#: extension.js:82
 msgid "show debug infos"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:111
+#: lib/AudioDevicePreferences.js:124
 msgid "Icon Styling - use monochrome symbolic icons"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:112
+#: lib/AudioDevicePreferences.js:125
 msgid " Whether you want colorful or symbolic monochrome icons"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:117
+#: lib/AudioDevicePreferences.js:130
 msgid "Systemtray Icon"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:118 lib/AudioDevicePreferences.js:122
+#: lib/AudioDevicePreferences.js:131 lib/AudioDevicePreferences.js:135
 msgid "toggle on: use symbolic icon"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:121
+#: lib/AudioDevicePreferences.js:134
 msgid "(Quick) Setting Menu"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:129
+#: lib/AudioDevicePreferences.js:142
 msgid "Customized Icons"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:130
+#: lib/AudioDevicePreferences.js:143
 #, javascript-format
 msgid "If you want customized icons, you can follow this <a href='%s'>wiki</a>"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:139 lib/PrefAppStyling.js:111
+#: lib/AudioDevicePreferences.js:152
 msgid "Shortcuts"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:140
+#: lib/AudioDevicePreferences.js:153
 msgid "Control whether shortcuts should be activated or not."
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:141
+#: lib/AudioDevicePreferences.js:154
 msgid ""
 "If true, the audio device can  also be selected / toggled with a hotkey."
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:142
+#: lib/AudioDevicePreferences.js:155
 #, javascript-format
 msgid "Hotkeys can be changed via <a href='%s'>dconf-editor.</a>"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:147 lib/PrefAppStyling.js:117
+#: lib/AudioDevicePreferences.js:161
 msgid "Toggle Headphone / Speaker hotkey"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:148 lib/PrefAppStyling.js:118
+#: lib/AudioDevicePreferences.js:162
 msgid "Default Hotkey: Ctrl+Super+T"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:151 lib/PrefAppStyling.js:121
+#: lib/AudioDevicePreferences.js:165
 msgid "Select speaker hotkey"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:152 lib/PrefAppStyling.js:122
+#: lib/AudioDevicePreferences.js:166
 msgid "Default Hotkey: Ctrl+Super+S"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:155 lib/PrefAppStyling.js:125
+#: lib/AudioDevicePreferences.js:169
 msgid "Select headphone hotkey"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:156 lib/PrefAppStyling.js:126
+#: lib/AudioDevicePreferences.js:170
 msgid "Default Hotkey: Ctrl+Super+H"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:170 lib/PrefAppStyling.js:139
+#: lib/AudioDevicePreferences.js:174
+msgid "Toggle headphone / remote headphone hotkey"
+msgstr ""
+
+#: lib/AudioDevicePreferences.js:175
+msgid "Default Hotkey: Ctrl+Super+R"
+msgstr ""
+
+#: lib/AudioDevicePreferences.js:191
 msgid "Output Devices"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:171 lib/PrefAppStyling.js:140
+#: lib/AudioDevicePreferences.js:192
 msgid "Select your Speaker and Headphone Device"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:185 lib/PrefAppStyling.js:154
+#: lib/AudioDevicePreferences.js:206
 msgid "Show System Indicator Icon"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:186 lib/PrefAppStyling.js:155
+#: lib/AudioDevicePreferences.js:207
 msgid "Whether to show the system indicator (e.g. the headphone) or not."
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:194 lib/PrefAppStyling.js:163
+#: lib/AudioDevicePreferences.js:214
 msgid "Speaker"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:201 lib/PrefAppStyling.js:170
+#: lib/AudioDevicePreferences.js:221
 msgid "Headphone"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:225
+#: lib/AudioDevicePreferences.js:239
+msgid "Toggle Between Headphone and Remote Headphone"
+msgstr ""
+
+#: lib/AudioDevicePreferences.js:240
+msgid ""
+"Activates a toggle between the headphone device and a second headphone "
+"device e.g. a remote device"
+msgstr ""
+
+#: lib/AudioDevicePreferences.js:249
+msgid "Remote-Headphone"
+msgstr ""
+
+#: lib/AudioDevicePreferences.js:270
+msgid "Support"
+msgstr ""
+
+#: lib/AudioDevicePreferences.js:271
+msgid "Enjoying this extension?"
+msgstr ""
+
+#: lib/AudioDevicePreferences.js:272
+#, javascript-format
+msgid ""
+"If you'd like to show your support, you can make a donation using this <a "
+"href='%s'>link.</a>"
+msgstr ""
+
+#: lib/AudioDevicePreferences.js:273
+msgid "– every contribution helps keep the project going!"
+msgstr ""
+
+#: lib/AudioDevicePreferences.js:285
 msgid "General-Preferences"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:227
+#: lib/AudioDevicePreferences.js:287
 msgid ""
 "If the toggle button is true (indicator icon is a headphone), the selected "
 "'Headphone' device will be used as default audio output device. Otherwise "
 "the 'Speaker' device will be used."
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:236
+#: lib/AudioDevicePreferences.js:298
 msgid "Styling"
 msgstr ""
 
-#: lib/AudioDevicePreferences.js:238
+#: lib/AudioDevicePreferences.js:300
 msgid "Customize your experience"
-msgstr ""
-
-#: lib/PrefAppStyling.js:112
-msgid ""
-"Control whether shortcuts should be activated or not.\n"
-"If true, the audio device can  also be selected / toggled with a hotkey.\n"
-"Hotkeys can be changed via dconf-editor."
-msgstr ""
-
-#: lib/PrefAppStyling.js:194
-msgid "Preferences"
 msgstr ""
