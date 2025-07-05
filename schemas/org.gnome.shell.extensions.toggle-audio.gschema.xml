@@ -110,6 +110,16 @@
       <summary>''</summary>
       <description>''</description>
     </key>
+    <key name="remote-headphone-icon-symbolic" type="s">
+      <default>'audio-headset-symbolic'</default>
+      <summary>''</summary>
+      <description>''</description>
+    </key>
+    <key name="remote-headphone-icon" type="s">
+      <default>'audio-headset'</default>
+      <summary>''</summary>
+      <description>''</description>
+    </key>
     <key name="use-remote-headphone-flag" type="b">
       <default>false</default>
       <summary>'Whether the switch is between remote headset and speaker or headphone and speaker'</summary>

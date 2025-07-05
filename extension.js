@@ -156,9 +156,20 @@ class AudioOutputToggleIndicator extends SystemIndicator {
             let use_monochrome = provider.getUseMonochromeIconOnSystemtray();
             if(v) {
                 // toggle to headphone
-                this._indicator.iconName = provider.getHeadphoneIcon(use_monochrome);
+                this._indicator.iconName = provider.getCorrectHeadphoneIcon(use_monochrome);
             } else {
                 this._indicator.iconName = provider.getSpeakerIcon(use_monochrome);
+            }
+        });
+
+        settings.connect("changed::use-remote-headphone-flag", (_,k) => {
+            let provider = new SettingProvider(settings);
+            let v = settings.get_boolean(k);
+            let use_monochrome = provider.getUseMonochromeIconOnSystemtray();
+            let headphoneStatus = provider.getHeadPhoneOnStatus();
+            if(headphoneStatus) {
+                // toggle to headphone
+                this._indicator.iconName = provider.getCorrectHeadphoneIcon(use_monochrome);
             }
         });
 
