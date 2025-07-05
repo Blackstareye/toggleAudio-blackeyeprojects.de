@@ -35,8 +35,10 @@ then you can switch between those `devices` with a click of a button:
   * default: <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>S</kbd>
 * select Headphone
   * default: <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>H</kbd>
-* toggle Headphone / Remote Headphone (or second Headphone)
-  * default: <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>R</kbd>
+* toggle Headphone / Remote Headphone (or second Headphone) 
+  * **this is only visible when the feature is activated**
+   
+    default: <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>R</kbd>
 
 You can `enable` those in the settings:
 
