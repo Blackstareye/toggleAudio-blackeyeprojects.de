@@ -124,7 +124,10 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         this._toggle = new AudioOutputToggleMenu(this, provider.getQuickSettingIcon(),provider);
 
         provider.onRemoteHeadphoneSettingChange( (_,k) => {
-            console.log("CHANGED NOW AUDIOBUTTON TOGGLE CHANGE");
+            console.log("CHANGED NOW AUDIOBUTTON TOGGLE CHANGE - NOT NEEDED HAHAHHAHAHA 2 - PLUSQAMPEREKT");
+            let provider = new SettingProvider(settings);
+            let icon = provider.getSystemTrayIcon();
+            this._indicator.iconName = icon;
         });
 
         
@@ -164,7 +167,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
 
         settings.connect("changed::use-remote-headphone-flag", (_,k) => {
             let provider = new SettingProvider(settings);
-            let v = settings.get_boolean(k);
             let use_monochrome = provider.getUseMonochromeIconOnSystemtray();
             let headphoneStatus = provider.getHeadPhoneOnStatus();
             if(headphoneStatus) {
