@@ -176,15 +176,6 @@ class AudioOutputToggleIndicator extends SystemIndicator {
         provider = null;
     }
 
-    // reload(state) {
-    //     let provider = this._provider;
-
-    //     // This is not the way TODO
-    //     this.quickSettingsItems.pop();
-    //     this._toggle = (state) ? new AudioOutputToggleMenu(this, provider.getQuickSettingIcon(),provider) :  new AudioOutputToggleMenu(this, provider.getQuickSettingIcon());
-    //     this.quickSettingsItems.push(this._toggle);
-    // }
-
     addKeybindingOnChangeEvents(settings, toggle, keybinder) {
        
         settings.connect("changed::enable-toggle-headphone-key", (_,k) => {
