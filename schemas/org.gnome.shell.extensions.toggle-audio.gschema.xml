@@ -74,7 +74,7 @@
       <description>Whether the hotkey is activated and usable or not</description>
     </key>
     <key name="enable-toggle-remote-headphone" type="b">
-      <default>true</default>
+      <default>false</default>
       <summary>'True: Remote Headphone Toggler is enabled'</summary>
       <description>Whether the remote headphone toggler mode is activated and usable or not</description>
     </key>

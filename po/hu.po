@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-05 04:04+0200\n"
-"PO-Revision-Date: 2025-07-05 04:44+0200\n"
+"POT-Creation-Date: 2025-07-05 15:23+0200\n"
+"PO-Revision-Date: 2025-07-05 15:43+0200\n"
 "Last-Translator: goat865 2155203+goat865@users.noreply.github.com\n"
 "Language-Team: \n"
-"Language: HU\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +35,7 @@ msgstr "Ikon Stílusa - monokróm ikonok használata"
 
 #: lib/AudioDevicePreferences.js:125
 msgid " Whether you want colorful or symbolic monochrome icons"
-msgstr "Színes vagy monokróm ikonok használata"
+msgstr " Színes vagy monokróm ikonok használata"
 
 #: lib/AudioDevicePreferences.js:130
 msgid "Systemtray Icon"
@@ -43,7 +43,7 @@ msgstr "Eszköz Ikonja"
 
 #: lib/AudioDevicePreferences.js:131 lib/AudioDevicePreferences.js:135
 msgid "toggle on: use symbolic icon"
-msgstr "Bekapcsolt állapotban monokróm ikon használata"
+msgstr "bekapcsolt állapotban monokróm ikon használata"
 
 #: lib/AudioDevicePreferences.js:134
 msgid "(Quick) Setting Menu"
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Hotkeys can be changed via <a href='%s'>dconf-editor.</a>"
 msgstr ""
 "A gyorsbillentyűket a <a href='%s'>dconf-editor</a> segítségével tudod "
-"módosítani."
+"módosítani"
 
 #: lib/AudioDevicePreferences.js:161
 msgid "Toggle Headphone / Speaker hotkey"
@@ -112,70 +112,85 @@ msgstr "Fejhallgató / Távoli fejhallgató váltása"
 msgid "Default Hotkey: Ctrl+Super+R"
 msgstr "Alapértelmezett gyorsbillentyű: Ctrl+Super+R"
 
-#: lib/AudioDevicePreferences.js:191
+#: lib/AudioDevicePreferences.js:192
+msgid "Toggle Between Headphone and Remote Headphone"
+msgstr "Váltás Fejhallgató és Távoli Fejhallgató Között"
+
+#: lib/AudioDevicePreferences.js:193
+msgid ""
+"Activates a toggle between the headphone device and a second headphone "
+"device e.g. a remote device"
+msgstr ""
+"Aktiválja a váltást a fejhallgató eszköz és egy második fejhallgató eszköz "
+"között, pl. egy távoli eszköz"
+
+#: lib/AudioDevicePreferences.js:197
+msgid "Activate Feature"
+msgstr "Funkció aktiválása"
+
+#: lib/AudioDevicePreferences.js:198
+msgid ""
+"Activates the Feature - Select your second Headset (e.g. remote Headset)"
+msgstr ""
+"Aktiválja a funkciót - Válaszd ki a második fejhallgatót (pl. távoli "
+"fejhallgató)"
+
+#: lib/AudioDevicePreferences.js:206
 msgid "Output Devices"
 msgstr "Kimeneti Eszközök"
 
-#: lib/AudioDevicePreferences.js:192
+#: lib/AudioDevicePreferences.js:207
 msgid "Select your Speaker and Headphone Device"
 msgstr "Válaszd ki a hangszórót és a fejhallgatót"
 
-#: lib/AudioDevicePreferences.js:206
+#: lib/AudioDevicePreferences.js:221
 msgid "Show System Indicator Icon"
 msgstr "Eszköz ikonjának megjelenítése"
 
-#: lib/AudioDevicePreferences.js:207
+#: lib/AudioDevicePreferences.js:222
 msgid "Whether to show the system indicator (e.g. the headphone) or not."
 msgstr ""
 "Megjelenjen-e a felső panelben a kiválasztott eszköz (pl. a fejhallgató) "
 "ikonja, vagy sem."
 
-#: lib/AudioDevicePreferences.js:214
+#: lib/AudioDevicePreferences.js:229
 msgid "Speaker"
 msgstr "Hangszóró"
 
-#: lib/AudioDevicePreferences.js:221
+#: lib/AudioDevicePreferences.js:236
 msgid "Headphone"
 msgstr "Fejhallgató"
 
-#: lib/AudioDevicePreferences.js:239
-msgid "Toggle Between Headphone and Remote Headphone"
-msgstr "Váltás Fejhallgató és Távoli Fejhallgató Között"
-
-#: lib/AudioDevicePreferences.js:240
-msgid ""
-"Activates a toggle between the headphone device and a second headphone "
-"device e.g. a remote device"
-msgstr "Aktiválja a váltást a fejhallgató eszköz és egy második fejhallgató eszköz között, pl. egy távoli eszköz"
-
-#: lib/AudioDevicePreferences.js:249
+#: lib/AudioDevicePreferences.js:260
 msgid "Remote-Headphone"
 msgstr "Távoli-Fejhallgató"
 
-#: lib/AudioDevicePreferences.js:270
+#: lib/AudioDevicePreferences.js:281
 msgid "Support"
 msgstr "Támogatás"
 
-#: lib/AudioDevicePreferences.js:271
+#: lib/AudioDevicePreferences.js:282
 msgid "Enjoying this extension?"
 msgstr "Tetszik ez a kiegészítő?"
 
-#: lib/AudioDevicePreferences.js:272
+#: lib/AudioDevicePreferences.js:283
 #, javascript-format
 msgid ""
 "If you'd like to show your support, you can make a donation using this <a "
 "href='%s'>link.</a>"
-msgstr "Ha szeretnéd kifejezni a támogatásod, adományozhatsz ezen a <a href='%s'>linken.</a>"
+msgstr ""
+"Ha szeretnéd kifejezni a támogatásod, adományozhatsz ezen a <a "
+"href='%s'>linken.</a>"
 
-#: lib/AudioDevicePreferences.js:273
+#: lib/AudioDevicePreferences.js:284
 msgid "– every contribution helps keep the project going!"
 msgstr "– minden hozzájárulás segít a projekt folytatásában!"
 
-#: lib/AudioDevicePreferences.js:285
+#: lib/AudioDevicePreferences.js:296
 msgid "General-Preferences"
 msgstr "Általános Beállítások"
 
-#: lib/AudioDevicePreferences.js:287
+#: lib/AudioDevicePreferences.js:298
 msgid ""
 "If the toggle button is true (indicator icon is a headphone), the selected "
 "'Headphone' device will be used as default audio output device. Otherwise "
@@ -185,11 +200,11 @@ msgstr ""
 "alapértelmezett kimeneti eszköz. Ellenkező esetben a 'Hangszóró' eszköz lesz "
 "használva."
 
-#: lib/AudioDevicePreferences.js:298
+#: lib/AudioDevicePreferences.js:309
 msgid "Styling"
 msgstr "Testreszabás"
 
-#: lib/AudioDevicePreferences.js:300
+#: lib/AudioDevicePreferences.js:311
 msgid "Customize your experience"
 msgstr "Megjelenés testreszabása"
 

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-05 04:04+0200\n"
-"PO-Revision-Date: 2025-07-05 04:45+0200\n"
+"POT-Creation-Date: 2025-07-05 15:23+0200\n"
+"PO-Revision-Date: 2025-07-05 15:45+0200\n"
 "Last-Translator: ammacca-banane 26335375+ammacca-"
 "banane@users.noreply.github.com\n"
 "Language-Team: \n"
@@ -28,7 +28,7 @@ msgstr "Passa a Cuffie Remote"
 
 #: extension.js:82
 msgid "show debug infos"
-msgstr "Mostra info debug"
+msgstr "mostra info debug"
 
 #: lib/AudioDevicePreferences.js:124
 msgid "Icon Styling - use monochrome symbolic icons"
@@ -37,7 +37,7 @@ msgstr "Stile Icone - Usa icone simboliche monocromatiche"
 #: lib/AudioDevicePreferences.js:125
 msgid " Whether you want colorful or symbolic monochrome icons"
 msgstr ""
-"Scegli se desideri avere delle icone colorate o simboliche monocromatiche"
+" Scegli se desideri avere delle icone colorate o simboliche monocromatiche"
 
 #: lib/AudioDevicePreferences.js:130
 msgid "Systemtray Icon"
@@ -45,7 +45,7 @@ msgstr "Icona barra di sistema"
 
 #: lib/AudioDevicePreferences.js:131 lib/AudioDevicePreferences.js:135
 msgid "toggle on: use symbolic icon"
-msgstr "Selettore attivo: usa icona simbolica"
+msgstr "selettore attivo: usa icona simbolica"
 
 #: lib/AudioDevicePreferences.js:134
 msgid "(Quick) Setting Menu"
@@ -60,7 +60,7 @@ msgstr "Icone Personalizzate"
 msgid "If you want customized icons, you can follow this <a href='%s'>wiki</a>"
 msgstr ""
 "Se desideri utilizzare delle icone personalizzate, puoi seguire questa <a "
-"href='%s'>wiki</a>."
+"href='%s'>wiki</a>"
 
 #: lib/AudioDevicePreferences.js:152
 msgid "Shortcuts"
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Hotkeys can be changed via <a href='%s'>dconf-editor.</a>"
 msgstr ""
 "Le scorciatoie possono essere cambiate attraverso il <a href='%s'>dconf-"
-"editor</a>."
+"editor</a>"
 
 #: lib/AudioDevicePreferences.js:161
 msgid "Toggle Headphone / Speaker hotkey"
@@ -116,68 +116,82 @@ msgstr "Scorciatoia 'Passa a Cuffie / Cuffie Remote'"
 msgid "Default Hotkey: Ctrl+Super+R"
 msgstr "Scorciatoia predefinita: Ctrl+Super+R"
 
-#: lib/AudioDevicePreferences.js:191
-msgid "Output Devices"
-msgstr "Dispositivi in uscita"
-
 #: lib/AudioDevicePreferences.js:192
-msgid "Select your Speaker and Headphone Device"
-msgstr "Seleziona i dispositivi Altoparlanti e Cuffie"
-
-#: lib/AudioDevicePreferences.js:206
-msgid "Show System Indicator Icon"
-msgstr "Mostra Icona Indicatore di Sistema"
-
-#: lib/AudioDevicePreferences.js:207
-msgid "Whether to show the system indicator (e.g. the headphone) or not."
-msgstr "Determina se mostrare un indicatore di sistema (es. le cuffie) o meno."
-
-#: lib/AudioDevicePreferences.js:214
-msgid "Speaker"
-msgstr "Altoparlanti"
-
-#: lib/AudioDevicePreferences.js:221
-msgid "Headphone"
-msgstr "Cuffie"
-
-#: lib/AudioDevicePreferences.js:239
 msgid "Toggle Between Headphone and Remote Headphone"
 msgstr "Passa tra Cuffie e Cuffie Remote"
 
-#: lib/AudioDevicePreferences.js:240
+#: lib/AudioDevicePreferences.js:193
 msgid ""
 "Activates a toggle between the headphone device and a second headphone "
 "device e.g. a remote device"
-msgstr "Attiva il passaggio tra il dispositivo cuffie e un secondo dispositivo cuffie, ad esempio un dispositivo remoto"
+msgstr ""
+"Attiva il passaggio tra il dispositivo cuffie e un secondo dispositivo "
+"cuffie, ad esempio un dispositivo remoto"
 
-#: lib/AudioDevicePreferences.js:249
+#: lib/AudioDevicePreferences.js:197
+msgid "Activate Feature"
+msgstr "Attiva Funzione"
+
+#: lib/AudioDevicePreferences.js:198
+msgid ""
+"Activates the Feature - Select your second Headset (e.g. remote Headset)"
+msgstr ""
+"Activates the Feature - Select your second Headset (e.g. remote Headset)"
+
+#: lib/AudioDevicePreferences.js:206
+msgid "Output Devices"
+msgstr "Dispositivi in uscita"
+
+#: lib/AudioDevicePreferences.js:207
+msgid "Select your Speaker and Headphone Device"
+msgstr "Seleziona i dispositivi Altoparlanti e Cuffie"
+
+#: lib/AudioDevicePreferences.js:221
+msgid "Show System Indicator Icon"
+msgstr "Mostra Icona Indicatore di Sistema"
+
+#: lib/AudioDevicePreferences.js:222
+msgid "Whether to show the system indicator (e.g. the headphone) or not."
+msgstr "Determina se mostrare un indicatore di sistema (es. le cuffie) o meno."
+
+#: lib/AudioDevicePreferences.js:229
+msgid "Speaker"
+msgstr "Altoparlanti"
+
+#: lib/AudioDevicePreferences.js:236
+msgid "Headphone"
+msgstr "Cuffie"
+
+#: lib/AudioDevicePreferences.js:260
 msgid "Remote-Headphone"
 msgstr "Cuffie Remote"
 
-#: lib/AudioDevicePreferences.js:270
+#: lib/AudioDevicePreferences.js:281
 msgid "Support"
 msgstr "Supporto"
 
-#: lib/AudioDevicePreferences.js:271
+#: lib/AudioDevicePreferences.js:282
 msgid "Enjoying this extension?"
 msgstr "Ti piace questa estensione?"
 
-#: lib/AudioDevicePreferences.js:272
+#: lib/AudioDevicePreferences.js:283
 #, javascript-format
 msgid ""
 "If you'd like to show your support, you can make a donation using this <a "
 "href='%s'>link.</a>"
-msgstr "Se vuoi mostrare il tuo supporto, puoi fare una donazione usando questo <a href='%s'>link.</a>"
+msgstr ""
+"Se vuoi mostrare il tuo supporto, puoi fare una donazione usando questo <a "
+"href='%s'>link.</a>"
 
-#: lib/AudioDevicePreferences.js:273
+#: lib/AudioDevicePreferences.js:284
 msgid "– every contribution helps keep the project going!"
 msgstr "– ogni contributo aiuta a mantenere il progetto attivo!"
 
-#: lib/AudioDevicePreferences.js:285
+#: lib/AudioDevicePreferences.js:296
 msgid "General-Preferences"
 msgstr "Preferenze Generali"
 
-#: lib/AudioDevicePreferences.js:287
+#: lib/AudioDevicePreferences.js:298
 msgid ""
 "If the toggle button is true (indicator icon is a headphone), the selected "
 "'Headphone' device will be used as default audio output device. Otherwise "
@@ -187,11 +201,11 @@ msgstr ""
 "dispositivo 'Cuffie' sarà utilizzato come dispositivo di uscita audio "
 "predefinito. Altrimenti, verrà utilizzato il dispositivo 'Altoparlanti'."
 
-#: lib/AudioDevicePreferences.js:298
+#: lib/AudioDevicePreferences.js:309
 msgid "Styling"
 msgstr "Stile"
 
-#: lib/AudioDevicePreferences.js:300
+#: lib/AudioDevicePreferences.js:311
 msgid "Customize your experience"
 msgstr "Personalizza la tua esperienza"
 
