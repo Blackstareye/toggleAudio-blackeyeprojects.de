@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: last translator\n"
-"POT-Creation-Date: 2024-09-29 16:00+0200\n"
-"PO-Revision-Date: 2024-09-29 17:05+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-05 04:04+0200\n"
+"PO-Revision-Date: 2025-07-05 04:44+0200\n"
 "Last-Translator: goat865 2155203+goat865@users.noreply.github.com\n"
 "Language-Team: \n"
 "Language: HU\n"
@@ -17,135 +17,191 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: extension.js:40
+#: extension.js:41 extension.js:47
 msgid "Switch Headphone"
 msgstr "Fejhallgató"
 
-#: extension.js:58
+#: extension.js:52
+msgid "Switch Remote Headphone"
+msgstr "Távoli Fejhallgató"
+
+#: extension.js:82
 msgid "show debug infos"
 msgstr "debug információk megjelenítése"
 
-#: lib/AudioDevicePreferences.js:111
+#: lib/AudioDevicePreferences.js:124
 msgid "Icon Styling - use monochrome symbolic icons"
 msgstr "Ikon Stílusa - monokróm ikonok használata"
 
-#: lib/AudioDevicePreferences.js:112
+#: lib/AudioDevicePreferences.js:125
 msgid " Whether you want colorful or symbolic monochrome icons"
 msgstr "Színes vagy monokróm ikonok használata"
 
-#: lib/AudioDevicePreferences.js:117
+#: lib/AudioDevicePreferences.js:130
 msgid "Systemtray Icon"
 msgstr "Eszköz Ikonja"
 
-#: lib/AudioDevicePreferences.js:118 lib/AudioDevicePreferences.js:122
+#: lib/AudioDevicePreferences.js:131 lib/AudioDevicePreferences.js:135
 msgid "toggle on: use symbolic icon"
 msgstr "Bekapcsolt állapotban monokróm ikon használata"
 
-#: lib/AudioDevicePreferences.js:121
+#: lib/AudioDevicePreferences.js:134
 msgid "(Quick) Setting Menu"
 msgstr "(Gyors) Beállítások Menü"
 
-#: lib/AudioDevicePreferences.js:129
+#: lib/AudioDevicePreferences.js:142
 msgid "Customized Icons"
 msgstr "Testreszabható Ikonok"
 
-#: lib/AudioDevicePreferences.js:130
+#: lib/AudioDevicePreferences.js:143
 #, javascript-format
 msgid "If you want customized icons, you can follow this <a href='%s'>wiki</a>"
-msgstr "Ha saját ikonokat szeretnél használni, kövesd ezt a <a href='%s'>wiki</a>-t"
+msgstr ""
+"Ha saját ikonokat szeretnél használni, kövesd ezt a <a href='%s'>wiki</a>-t"
 
-#: lib/AudioDevicePreferences.js:139 lib/PrefAppStyling.js:111
+#: lib/AudioDevicePreferences.js:152
 msgid "Shortcuts"
 msgstr "Gyorsbillentyűk"
 
-#: lib/AudioDevicePreferences.js:140
+#: lib/AudioDevicePreferences.js:153
 msgid "Control whether shortcuts should be activated or not."
 msgstr "A gyorsbillentyűk ki/bekapcsolása."
 
-#: lib/AudioDevicePreferences.js:141
+#: lib/AudioDevicePreferences.js:154
 msgid ""
 "If true, the audio device can  also be selected / toggled with a hotkey."
-msgstr "Bekapcsolt állapotban az eszközöket gyorsbillentyűkkel is át tudod állítani."
+msgstr ""
+"Bekapcsolt állapotban az eszközöket gyorsbillentyűkkel is át tudod állítani."
 
-#: lib/AudioDevicePreferences.js:142
+#: lib/AudioDevicePreferences.js:155
 #, javascript-format
 msgid "Hotkeys can be changed via <a href='%s'>dconf-editor.</a>"
-msgstr "A gyorsbillentyűket a <a href='%s'>dconf-editor</a> segítségével tudod módosítani."
+msgstr ""
+"A gyorsbillentyűket a <a href='%s'>dconf-editor</a> segítségével tudod "
+"módosítani."
 
-#: lib/AudioDevicePreferences.js:147 lib/PrefAppStyling.js:117
+#: lib/AudioDevicePreferences.js:161
 msgid "Toggle Headphone / Speaker hotkey"
 msgstr "Fejhallgató / Hangszóró váltása"
 
-#: lib/AudioDevicePreferences.js:148 lib/PrefAppStyling.js:118
+#: lib/AudioDevicePreferences.js:162
 msgid "Default Hotkey: Ctrl+Super+T"
 msgstr "Alapértelmezett gyorsbillentyű: Ctrl+Super+T"
 
-#: lib/AudioDevicePreferences.js:151 lib/PrefAppStyling.js:121
+#: lib/AudioDevicePreferences.js:165
 msgid "Select speaker hotkey"
 msgstr "Váltás hangszóróra"
 
-#: lib/AudioDevicePreferences.js:152 lib/PrefAppStyling.js:122
+#: lib/AudioDevicePreferences.js:166
 msgid "Default Hotkey: Ctrl+Super+S"
 msgstr "Alapértelmezett gyorsbillentyű: Ctrl+Super+S"
 
-#: lib/AudioDevicePreferences.js:155 lib/PrefAppStyling.js:125
+#: lib/AudioDevicePreferences.js:169
 msgid "Select headphone hotkey"
 msgstr "Váltás fejhallgatóra"
 
-#: lib/AudioDevicePreferences.js:156 lib/PrefAppStyling.js:126
+#: lib/AudioDevicePreferences.js:170
 msgid "Default Hotkey: Ctrl+Super+H"
 msgstr "Alapértelmezett gyorsbillentyű: Ctrl+Super+H"
 
-#: lib/AudioDevicePreferences.js:170 lib/PrefAppStyling.js:139
+#: lib/AudioDevicePreferences.js:174
+msgid "Toggle headphone / remote headphone hotkey"
+msgstr "Fejhallgató / Távoli fejhallgató váltása"
+
+#: lib/AudioDevicePreferences.js:175
+msgid "Default Hotkey: Ctrl+Super+R"
+msgstr "Alapértelmezett gyorsbillentyű: Ctrl+Super+R"
+
+#: lib/AudioDevicePreferences.js:191
 msgid "Output Devices"
 msgstr "Kimeneti Eszközök"
 
-#: lib/AudioDevicePreferences.js:171 lib/PrefAppStyling.js:140
+#: lib/AudioDevicePreferences.js:192
 msgid "Select your Speaker and Headphone Device"
 msgstr "Válaszd ki a hangszórót és a fejhallgatót"
 
-#: lib/AudioDevicePreferences.js:185 lib/PrefAppStyling.js:154
+#: lib/AudioDevicePreferences.js:206
 msgid "Show System Indicator Icon"
 msgstr "Eszköz ikonjának megjelenítése"
 
-#: lib/AudioDevicePreferences.js:186 lib/PrefAppStyling.js:155
+#: lib/AudioDevicePreferences.js:207
 msgid "Whether to show the system indicator (e.g. the headphone) or not."
-msgstr "Megjelenjen-e a felső panelben a kiválasztott eszköz (pl. a fejhallgató) ikonja, vagy sem."
+msgstr ""
+"Megjelenjen-e a felső panelben a kiválasztott eszköz (pl. a fejhallgató) "
+"ikonja, vagy sem."
 
-#: lib/AudioDevicePreferences.js:194 lib/PrefAppStyling.js:163
+#: lib/AudioDevicePreferences.js:214
 msgid "Speaker"
 msgstr "Hangszóró"
 
-#: lib/AudioDevicePreferences.js:201 lib/PrefAppStyling.js:170
+#: lib/AudioDevicePreferences.js:221
 msgid "Headphone"
 msgstr "Fejhallgató"
 
-#: lib/AudioDevicePreferences.js:225
+#: lib/AudioDevicePreferences.js:239
+msgid "Toggle Between Headphone and Remote Headphone"
+msgstr "Váltás Fejhallgató és Távoli Fejhallgató Között"
+
+#: lib/AudioDevicePreferences.js:240
+msgid ""
+"Activates a toggle between the headphone device and a second headphone "
+"device e.g. a remote device"
+msgstr "Aktiválja a váltást a fejhallgató eszköz és egy második fejhallgató eszköz között, pl. egy távoli eszköz"
+
+#: lib/AudioDevicePreferences.js:249
+msgid "Remote-Headphone"
+msgstr "Távoli-Fejhallgató"
+
+#: lib/AudioDevicePreferences.js:270
+msgid "Support"
+msgstr "Támogatás"
+
+#: lib/AudioDevicePreferences.js:271
+msgid "Enjoying this extension?"
+msgstr "Tetszik ez a kiegészítő?"
+
+#: lib/AudioDevicePreferences.js:272
+#, javascript-format
+msgid ""
+"If you'd like to show your support, you can make a donation using this <a "
+"href='%s'>link.</a>"
+msgstr "Ha szeretnéd kifejezni a támogatásod, adományozhatsz ezen a <a href='%s'>linken.</a>"
+
+#: lib/AudioDevicePreferences.js:273
+msgid "– every contribution helps keep the project going!"
+msgstr "– minden hozzájárulás segít a projekt folytatásában!"
+
+#: lib/AudioDevicePreferences.js:285
 msgid "General-Preferences"
 msgstr "Általános Beállítások"
 
-#: lib/AudioDevicePreferences.js:227
+#: lib/AudioDevicePreferences.js:287
 msgid ""
 "If the toggle button is true (indicator icon is a headphone), the selected "
 "'Headphone' device will be used as default audio output device. Otherwise "
 "the 'Speaker' device will be used."
-msgstr "Bekapcsolt állapotban a kiválasztott 'Fejhallgató' eszköz lesz az alapértelmezett kimeneti eszköz. Ellenkező esetben a 'Hangszóró' eszköz lesz használva."
+msgstr ""
+"Bekapcsolt állapotban a kiválasztott 'Fejhallgató' eszköz lesz az "
+"alapértelmezett kimeneti eszköz. Ellenkező esetben a 'Hangszóró' eszköz lesz "
+"használva."
 
-#: lib/AudioDevicePreferences.js:236
+#: lib/AudioDevicePreferences.js:298
 msgid "Styling"
 msgstr "Testreszabás"
 
-#: lib/AudioDevicePreferences.js:238
+#: lib/AudioDevicePreferences.js:300
 msgid "Customize your experience"
 msgstr "Megjelenés testreszabása"
 
-#: lib/PrefAppStyling.js:112
-msgid ""
-"Control whether shortcuts should be activated or not.\n"
-"If true, the audio device can  also be selected / toggled with a hotkey.\n"
-"Hotkeys can be changed via dconf-editor."
-msgstr "A gyorsbillentyűk ki/bekapcsolása.\nBekapcsolt állapotban az eszközöket gyorsbillentyűkkel is át tudod állítani.\nA gyorsbillentyűket a dconf-editor segítségével tudod módosítani."
+#~ msgid ""
+#~ "Control whether shortcuts should be activated or not.\n"
+#~ "If true, the audio device can  also be selected / toggled with a hotkey.\n"
+#~ "Hotkeys can be changed via dconf-editor."
+#~ msgstr ""
+#~ "A gyorsbillentyűk ki/bekapcsolása.\n"
+#~ "Bekapcsolt állapotban az eszközöket gyorsbillentyűkkel is át tudod "
+#~ "állítani.\n"
+#~ "A gyorsbillentyűket a dconf-editor segítségével tudod módosítani."
 
-#: lib/PrefAppStyling.js:194
-msgid "Preferences"
-msgstr "Beállítások"
+#~ msgid "Preferences"
+#~ msgstr "Beállítások"
