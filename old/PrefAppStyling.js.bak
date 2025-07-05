@@ -126,12 +126,21 @@ export default class AudioDevicePreferences {
             subtitle: _('Default Hotkey: Ctrl+Super+H'),
         });
 
+        const activateToggleRemoteHeadphoneHotkey = new Adw.SwitchRow({
+            title: _('___'),
+            subtitle: _('____'),
+        });
+
+        //  TODO an das RemoteHeadphoneSetting flantschen
+
         toggleHotKeysGroup.add(activateToggleHotkey);
         toggleHotKeysGroup.add(activateSelectSpeakerHotkey);
         toggleHotKeysGroup.add(activateSelectHeadphoneHotkey);
+        // toggleHotKeysGroup.add(activateToggleRemoteHeadphoneHotkey);
         this._settingProvider.bindEnableToggleHeadphoneHotKey(activateToggleHotkey);
         this._settingProvider.bindEnableSelectSpeakerHotKey(activateSelectSpeakerHotkey);
         this._settingProvider.bindEnableSelectHeadphoneHotKey(activateSelectHeadphoneHotkey);
+        // this._settingProvider.bindEnableToggleRemoteHeadphoneHotKey(activateToggleRemoteHeadphoneHotkey); //bindEnableToggleRemoteHeadphoneHotKey
     }
 
     _createOutputDeviceGroup(page) {
