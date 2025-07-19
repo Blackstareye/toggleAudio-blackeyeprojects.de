@@ -9,9 +9,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-05 15:23+0200\n"
-"PO-Revision-Date: 2025-07-05 15:45+0200\n"
-"Last-Translator: ammacca-banane 26335375+ammacca-"
-"banane@users.noreply.github.com\n"
+"PO-Revision-Date: 2025-07-19 17:08+0200\n"
+"Last-Translator: ammacca-banane 26335375+ammacca-banane@users.noreply.github.com\n"
 "Language-Team: \n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +23,7 @@ msgstr "Passa a Cuffie"
 
 #: extension.js:52
 msgid "Switch Remote Headphone"
-msgstr "Passa a Cuffie Remote"
+msgstr "Passa a Cuffie Secondarie"
 
 #: extension.js:82
 msgid "show debug infos"
@@ -110,7 +109,7 @@ msgstr "Scorciatoia predefinita: Ctrl+Super+H"
 
 #: lib/AudioDevicePreferences.js:174
 msgid "Toggle headphone / remote headphone hotkey"
-msgstr "Scorciatoia 'Passa a Cuffie / Cuffie Remote'"
+msgstr "Scorciatoia 'Passa a Cuffie / Cuffie Secondarie'"
 
 #: lib/AudioDevicePreferences.js:175
 msgid "Default Hotkey: Ctrl+Super+R"
@@ -118,25 +117,25 @@ msgstr "Scorciatoia predefinita: Ctrl+Super+R"
 
 #: lib/AudioDevicePreferences.js:192
 msgid "Toggle Between Headphone and Remote Headphone"
-msgstr "Passa tra Cuffie e Cuffie Remote"
+msgstr "Passa tra Cuffie e Cuffie Secondarie"
 
 #: lib/AudioDevicePreferences.js:193
 msgid ""
 "Activates a toggle between the headphone device and a second headphone "
 "device e.g. a remote device"
 msgstr ""
-"Attiva il passaggio tra il dispositivo cuffie e un secondo dispositivo "
-"cuffie, ad esempio un dispositivo remoto"
+"Abilita il passaggio tra il dispositivo cuffie e un dispositivo cuffie"
+"secondario, ad esempio un dispositivo remoto"
 
 #: lib/AudioDevicePreferences.js:197
 msgid "Activate Feature"
-msgstr "Attiva Funzione"
+msgstr "Abilita Funzione"
 
 #: lib/AudioDevicePreferences.js:198
 msgid ""
 "Activates the Feature - Select your second Headset (e.g. remote Headset)"
 msgstr ""
-"Activates the Feature - Select your second Headset (e.g. remote Headset)"
+"Abilita la funzionalità - Seleziona delle cuffie secondarie (es. delle cuffie remote)"
 
 #: lib/AudioDevicePreferences.js:206
 msgid "Output Devices"
