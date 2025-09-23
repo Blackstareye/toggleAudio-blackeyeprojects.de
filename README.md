@@ -63,7 +63,9 @@ PS: You can even [customize](https://github.com/Blackstareye/toggleAudio-blackey
 
 with 2 audio devices:
 
-* Gnome 48;
+* Gnome 49:
+  * CachyOS
+* Gnome 48:
   * Fedora 42
   * CachyOS
 * Gnome 47:
