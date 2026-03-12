@@ -4,6 +4,8 @@
 
 Settings
 
+[How to get to the setting page](https://github.com/Blackstareye/toggleAudio-blackeyeprojects.de/wiki/Where-to-find-the-settings-page)
+
 ![shows settings](img/settings.png)
 
 set your `headphone` and `speaker` devices in preferences
