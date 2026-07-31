@@ -61,6 +61,10 @@ You can **control** whether you want to use colorful or symbolic monochrome icon
 
 PS: You can even [customize](https://github.com/Blackstareye/toggleAudio-blackeyeprojects.de/wiki/Styling-and-Customization) the used icons if you want
 
+## Contribution especially for issues
+
+Please don't use ai to write the issues. Thank you.
+
 ## Tested on
 
 with 2 audio devices:
