@@ -63,7 +63,8 @@ PS: You can even [customize](https://github.com/Blackstareye/toggleAudio-blackey
 
 ## Contribution especially for issues
 
-Please don't use ai to write the issues. Thank you.
+Please don't use ai to write the issues. Especially if they are rather general or even contain errors. Thank you for understanding.
+Why? - I want to talk to real people and talk about issues, not a standard formatted answer without any empathy in it.
 
 ## Tested on
 
